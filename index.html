@@ -44,6 +44,10 @@
             font-weight: 300;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-image: url('pic.png');
+            background-size: cover;
+            background-position: center-top;
+            background-blend-mode: overlay;
         }
 
         .profile-photo:hover {
@@ -241,8 +245,9 @@
 
     <div class="container">
         <!-- Profile Photo -->
+
+        <!-- <img src="pic.png" alt="Profile Pic" class="profile-photo"> -->
         <div class="profile-photo">
-           <img src="pic.png" alt="Profile Pic">
         </div>
 
         <!-- Name -->
@@ -255,8 +260,9 @@
 
         <!-- Social Links -->
         <div class="social-links">
+            <i class="hgi hgi-duotone hgi-mail-01"></i>
             <a href="mailto:alex@example.com" class="social-link" title="Email">
-                <i class="hgi hgi-duotone hgi-mail-01"></i>
+            <p><i class="hgi-stroke hgi-access"></i></p>
             </a>
             <a href="https://linkedin.com/in/alexchen" class="social-link" title="LinkedIn">
                 💼
@@ -297,12 +303,10 @@
         let currentVariant = 2; // Start with variant-3
 
         // Uncomment to enable auto gradient cycling
-        /*
-        setInterval(() => {
-            document.body.className = variants[currentVariant];
-            currentVariant = (currentVariant + 1) % variants.length;
-        }, 10000);
-        */
+        // setInterval(() => {
+        //     document.body.className = variants[currentVariant];
+        //     currentVariant = (currentVariant + 1) % variants.length;
+        // }, 5000);
     </script>
 </body>
 </html>
