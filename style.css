@@ -226,3 +226,46 @@ body.variant-5 {
     }
 }
 
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,1);      /* fully white */
+  border-radius: 50%;
+  top: 0;                                /* start at top edge */
+  transform: translateY(100vh);          /* match 0% keyframe */
+  opacity: 0;                            /* match 0% keyframe */
+  animation: float 6s infinite ease-in-out both;  /* apply initial state before delay */
+}
+
+/* Distribute 6 particles evenly across the width */
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 30%; animation-delay: 1s; }
+.particle:nth-child(3) { left: 50%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 70%; animation-delay: 3s; }
+.particle:nth-child(5) { left: 90%; animation-delay: 4s; }
+.particle:nth-child(6) { left: 50%; animation-delay: 5s; }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10vh);
+  }
+}
+
+/* Container must hide overflow */
+.particle-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
