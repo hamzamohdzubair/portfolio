@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamza Mohd Zubair - Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
+    />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body class="variant-3">
+  </head>
+  <body class="variant-3">
     <!-- Floating particles -->
     <div class="particle"></div>
     <div class="particle"></div>
@@ -16,65 +19,83 @@
     <div class="particle"></div>
 
     <div class="container">
-        <!-- Profile Photo -->
+      <!-- Profile Photo -->
 
-        <!-- <img src="pic.png" alt="Profile Pic" class="profile-photo"> -->
-        <div class="profile-photo">
-        </div>
+      <!-- <img src="pic.png" alt="Profile Pic" class="profile-photo"> -->
+      <div class="profile-photo"></div>
 
-        <!-- Name -->
-        <h1 class="name">Hamza Mohd Zubair</h1>
+      <!-- Name -->
+      <h1 class="name">Hamza Mohd Zubair</h1>
 
-        <!-- Bio -->
-        <p class="bio">
-        I love simplifying complex topics, building scalable systems and applying formal sciences to solve problems in social sciences.
-        </p>
+      <!-- Bio -->
+      <p class="bio">
+        I love simplifying complex topics, building scalable systems and
+        applying formal sciences to solve problems in social sciences.
+      </p>
 
-        <!-- Social Links -->
-        <div class="social-links">
-            <a href="mailto:hamzamohdzubair@gmail.com" class="social-link" title="Email">
-                <i class="hgi hgi-stroke hgi-mail-01"></i>
-            </a>
-            <a href="https://linkedin.com/in/hamzamohdzubair" class="social-link" title="LinkedIn">
-                <i class="hgi hgi-stroke hgi-linkedin-02"></i>
-            </a>
-            <a href="https://github.com/hamzamohdzubair" class="social-link" title="GitHub">
-                <i class="hgi hgi-stroke hgi-github-01"></i>
-            </a>
-            <a href="https://slides.hzubair.com" target="_blank" class="social-link" title="Slides">
-                <i class="hgi hgi-stroke hgi-presentation-bar-chart-01"></i>
-            </a>
-        </div>
+      <!-- Social Links -->
+      <div class="social-links">
+        <a
+          href="mailto:hamzamohdzubair@gmail.com"
+          class="social-link"
+          title="Email"
+        >
+          <i class="hgi hgi-stroke hgi-mail-01"></i>
+        </a>
+        <a
+          href="https://linkedin.com/in/hamzamohdzubair"
+          class="social-link"
+          title="LinkedIn"
+        >
+          <i class="hgi hgi-stroke hgi-linkedin-02"></i>
+        </a>
+        <a
+          href="https://github.com/hamzamohdzubair"
+          class="social-link"
+          title="GitHub"
+        >
+          <i class="hgi hgi-stroke hgi-github-01"></i>
+        </a>
+        <!-- <a href="https://slides.hzubair.com" target="_blank" class="social-link" title="Slides"> -->
+        <!--     <i class="hgi hgi-stroke hgi-presentation-bar-chart-01"></i> -->
+        <!-- </a> -->
+      </div>
     </div>
 
     <script>
-        // Add some interactive magic
-        document.addEventListener('mousemove', (e) => {
-            const photo = document.querySelector('.profile-photo');
-            const rect = photo.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            const distance = Math.sqrt(x * x + y * y);
-            if (distance < 150) {
-                const angle = Math.atan2(y, x);
-                const moveX = Math.cos(angle) * 5;
-                const moveY = Math.sin(angle) * 5;
-                photo.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            } else {
-                photo.style.transform = 'translate(0, 0)';
-            }
-        });
+      // Add some interactive magic
+      document.addEventListener("mousemove", (e) => {
+        const photo = document.querySelector(".profile-photo");
+        const rect = photo.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
-        // Cycle through gradient variants (optional)
-        const variants = ['variant-1', 'variant-2', 'variant-3', 'variant-4', 'variant-5'];
-        let currentVariant = 2; // Start with variant-3
+        const distance = Math.sqrt(x * x + y * y);
+        if (distance < 150) {
+          const angle = Math.atan2(y, x);
+          const moveX = Math.cos(angle) * 5;
+          const moveY = Math.sin(angle) * 5;
+          photo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        } else {
+          photo.style.transform = "translate(0, 0)";
+        }
+      });
 
-        // Uncomment to enable auto gradient cycling
-        // setInterval(() => {
-        //     document.body.className = variants[currentVariant];
-        //     currentVariant = (currentVariant + 1) % variants.length;
-        // }, 5000);
+      // Cycle through gradient variants (optional)
+      const variants = [
+        "variant-1",
+        "variant-2",
+        "variant-3",
+        "variant-4",
+        "variant-5",
+      ];
+      let currentVariant = 2; // Start with variant-3
+
+      // Uncomment to enable auto gradient cycling
+      // setInterval(() => {
+      //     document.body.className = variants[currentVariant];
+      //     currentVariant = (currentVariant + 1) % variants.length;
+      // }, 5000);
     </script>
-</body>
+  </body>
 </html>
