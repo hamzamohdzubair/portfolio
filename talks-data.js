@@ -6,17 +6,19 @@ const TALKS_DATA = [
     "folder": "15OCT25",
     "thumb": "thumb.jpeg",
     "images": [
-      "WhatsApp Image 2025-10-10 at 15.05.29.jpeg"
+      "WhatsApp%20Image%202025-10-10%20at%2015.05.29.jpeg",
+      "thumb%20copy.jpeg"
     ]
   },
   {
     "folder": "25OCT25",
     "thumb": "thumb.jpeg",
     "images": [
-      "WhatsApp Image 2025-10-22 at 10.27.40.jpeg",
-      "WhatsApp Image 2025-10-25 at 14.50.39 (1).jpeg",
-      "WhatsApp Image 2025-10-25 at 14.50.39.jpeg",
-      "WhatsApp Image 2025-10-25 at 19.44.10.jpeg"
+      "WhatsApp%20Image%202025-10-22%20at%2010.27.40.jpeg",
+      "WhatsApp%20Image%202025-10-25%20at%2014.50.39%20(1).jpeg",
+      "WhatsApp%20Image%202025-10-25%20at%2014.50.39.jpeg",
+      "WhatsApp%20Image%202025-10-25%20at%2019.44.10.jpeg",
+      "copyofthumb.jpeg"
     ]
   }
 ];

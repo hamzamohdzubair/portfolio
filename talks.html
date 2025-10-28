@@ -85,7 +85,7 @@
         width: 100%;
         height: 200px;
         overflow: hidden;
-        cursor: pointer;
+        /* cursor: pointer; */
         background: rgba(0, 0, 0, 0.2);
       }
 
@@ -179,6 +179,49 @@
         transform: translateY(-2px);
       }
 
+      .talk-link.disabled {
+        opacity: 0.4;
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+
+      /* Show GLightbox slide counter */
+
+      /* Style GLightbox description */
+      /* .glightbox-container .gslide-description. { */
+      /*   background: rgba(100, 0, 0, 0.6) !important; */
+      /*   position: absolute !important; */
+      /*   bottom: 20px !important; */
+      /*   left: 50% !important; */
+      /*   transform: translateX(-50%); */
+      /*   width: auto; */
+      /*   padding: 1px; */
+      /*   border-radius: 10px; */
+      /*   font-size: 34px; */
+      /*   color: white; */
+      /*   border: 1px solid rgba(255, 255, 255, 0.2); */
+      /* } */
+
+      .glightbox-container .gslide-description.description-bottom {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: absolute;
+        bottom: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        max-width: none;
+        /* padding: 2px 6px; */
+        border-radius: 10px;
+        font-size: 24px;
+        color: white;
+      }
+
+      /* .glightbox-container .gslide-inner-content { */
+      /*   position: relative; */
+      /* } */
+
       /* Animations */
       @keyframes fadeInUp {
         from {
@@ -243,7 +286,20 @@
               <span>Nov 2025</span>|
               <span>MINE</span>
             </div>
-            <div class="talk-links"></div>
+            <div class="talk-links">
+              <a href="#" class="talk-link disabled">
+                <iconify-icon
+                  icon="material-symbols:play-circle"
+                ></iconify-icon>
+                Video
+              </a>
+              <a href="#" class="talk-link disabled photos-btn">
+                <iconify-icon
+                  icon="material-symbols:photo-camera"
+                ></iconify-icon>
+                Photos
+              </a>
+            </div>
           </div>
         </div>
 
@@ -256,13 +312,13 @@
               <span>BIFT, Bangalore</span>
             </div>
             <div class="talk-links">
-              <a href="#" class="talk-link">
+              <a href="#" class="talk-link disabled">
                 <iconify-icon
                   icon="material-symbols:play-circle"
                 ></iconify-icon>
                 Video
               </a>
-              <a href="#" class="talk-link photos-btn">
+              <a href="#" class="talk-link disabled photos-btn">
                 <iconify-icon
                   icon="material-symbols:photo-camera"
                 ></iconify-icon>
@@ -282,7 +338,10 @@
               <span>TSI, Sompura, Bangalore</span>
             </div>
             <div class="talk-links">
-              <a href="#" class="talk-link">
+              <a
+                href="https://www.youtube.com/live/Mzzx8giTGdc?si=GuUldJNTU8pvlv-J"
+                class="talk-link"
+              >
                 <iconify-icon
                   icon="material-symbols:play-circle"
                 ></iconify-icon>
@@ -304,10 +363,10 @@
             <h2 class="talk-title">Sustainable AI</h2>
             <div class="talk-meta">
               <span>Oct 2025</span>|
-              <span>St. Claret College</span>
+              <span>St. Claret College, Bangalore</span>
             </div>
             <div class="talk-links">
-              <a href="#" class="talk-link">
+              <a href="#" class="talk-link disabled">
                 <iconify-icon
                   icon="material-symbols:play-circle"
                 ></iconify-icon>
@@ -369,6 +428,8 @@
                 <a href="${basePath}/${images[i]}" 
                    class="glightbox gallery-trigger" 
                    data-gallery="${folder}" 
+
+                   data-glightbox="description: ${i + 1} / ${imageCount}"
                    style="display:none;">
                 </a>
             `;
@@ -395,8 +456,11 @@
       setTimeout(() => {
         GLightbox({
           touchNavigation: true,
-          loop: true,
+          loop: false,
           autoplayVideos: true,
+          slideEffect: "slide",
+          descPosition: "bottom", // This shows slide counter
+          skin: "clean",
         });
       }, 100);
     </script>
