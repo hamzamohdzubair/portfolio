@@ -5,268 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Talks - hzubair</title>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
-    <!-- GLightbox CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
     />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <style>
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        color: #ffffff;
-        overflow-x: hidden;
-        padding: 2rem 1rem;
-        overflow-y: auto;
-      }
-
-      /* Container */
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-top: 4rem;
-      }
-
-      /* Header */
-      .page-header {
-        text-align: center;
-        margin-bottom: 4rem;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .page-title {
-        font-size: 3rem;
-        font-weight: 300;
-        margin-bottom: 1rem;
-        letter-spacing: -0.5px;
-      }
-
-      .page-subtitle {
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 300;
-      }
-
-      /* Talks Grid */
-      .talks-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        margin-bottom: 4rem;
-      }
-
-      /* Talk Card */
-      .talk-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        overflow: hidden;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .talk-card:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Thumbnail */
-      .talk-thumbnail {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-        /* cursor: pointer; */
-        background: rgba(0, 0, 0, 0.2);
-      }
-
-      .talk-thumbnail img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .talk-thumbnail:hover img {
-        transform: scale(1.05);
-      }
-
-      .image-count {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      /* Card Content */
-      .talk-content {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-      }
-
-      .talk-title {
-        font-size: 1.25rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-        line-height: 1.3;
-        text-align: left;
-      }
-
-      .talk-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-        opacity: 0.9;
-      }
-
-      .talk-meta span {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-      }
-
-      .talk-description {
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        opacity: 0.9;
-        font-weight: 300;
-      }
-
-      .talk-links {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        margin-top: auto;
-      }
-
-      .talk-link {
-        padding: 0.3rem 0.5rem;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: white;
-        text-decoration: none;
-        border-radius: 10px;
-        font-size: 0.9rem;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .talk-link:hover {
-        background: rgba(255, 255, 255, 0.25);
-        transform: translateY(-2px);
-      }
-
-      .talk-link.disabled {
-        opacity: 0.4;
-        pointer-events: none;
-        cursor: not-allowed;
-      }
-
-      /* Show GLightbox slide counter */
-
-      /* Style GLightbox description */
-      /* .glightbox-container .gslide-description. { */
-      /*   background: rgba(100, 0, 0, 0.6) !important; */
-      /*   position: absolute !important; */
-      /*   bottom: 20px !important; */
-      /*   left: 50% !important; */
-      /*   transform: translateX(-50%); */
-      /*   width: auto; */
-      /*   padding: 1px; */
-      /*   border-radius: 10px; */
-      /*   font-size: 34px; */
-      /*   color: white; */
-      /*   border: 1px solid rgba(255, 255, 255, 0.2); */
-      /* } */
-
-      .glightbox-container .gslide-description.description-bottom {
-        background-color: rgba(0, 0, 0, 0.4) !important;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        position: absolute;
-        bottom: 3px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: auto;
-        max-width: none;
-        /* padding: 2px 6px; */
-        border-radius: 10px;
-        font-size: 24px;
-        color: white;
-      }
-
-      /* .glightbox-container .gslide-inner-content { */
-      /*   position: relative; */
-      /* } */
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Mobile responsive */
-      @media (max-width: 768px) {
-        .page-title {
-          font-size: 2rem;
-        }
-
-        .page-subtitle {
-          font-size: 1rem;
-        }
-
-        .talks-grid {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-
-        .home-button {
-          top: 1rem;
-          left: 1rem;
-          width: 45px;
-          height: 45px;
-        }
-
-        .container {
-          padding-top: 2rem;
-        }
-      }
-
-      /* GLightbox custom styling */
-      .glightbox-container .gslide-description {
-        background: rgba(102, 126, 234, 0.95) !important;
-        backdrop-filter: blur(20px);
-      }
-    </style>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/talks.css" />
   </head>
   <body>
     <!-- Home button -->
@@ -381,88 +125,63 @@
             </div>
           </div>
         </div>
+
+        <div class="talk-card">
+          <div class="talk-thumbnail" data-folder="13DEC19"></div>
+          <div class="talk-content">
+            <h2 class="talk-title">HackerTech</h2>
+            <div class="talk-meta">
+              <span>Dec 2019</span>|
+              <span>VIT University, Vellore</span>
+            </div>
+            <div class="talk-links">
+              <a href="#" class="talk-link disabled">
+                <iconify-icon
+                  icon="material-symbols:play-circle"
+                ></iconify-icon>
+                Video
+              </a>
+              <a href="#" class="talk-link photos-btn">
+                <iconify-icon
+                  icon="material-symbols:photo-camera"
+                ></iconify-icon>
+                Photos
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="talk-card">
+          <div class="talk-thumbnail" data-folder="08AUG17"></div>
+          <div class="talk-content">
+            <h2 class="talk-title">AI for Startups</h2>
+            <div class="talk-meta">
+              <span>Aug 2017</span>|
+              <span>Nexus, US Embassy, New Delhi</span>
+            </div>
+            <div class="talk-links">
+              <a href="#" class="talk-link disabled">
+                <iconify-icon
+                  icon="material-symbols:play-circle"
+                ></iconify-icon>
+                Video
+              </a>
+              <a href="#" class="talk-link photos-btn">
+                <iconify-icon
+                  icon="material-symbols:photo-camera"
+                ></iconify-icon>
+                Photos
+              </a>
+            </div>
+          </div>
+        </div>
         <!-- Add more talk cards here! Just copy-paste the template below -->
       </div>
     </div>
 
     <!-- GLightbox JS -->
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-
     <script src="talks-data.js"></script>
-
-    <script>
-      function generateGalleries() {
-        const thumbnails = document.querySelectorAll(
-          ".talk-thumbnail[data-folder]",
-        );
-
-        thumbnails.forEach((thumbnail) => {
-          const folder = thumbnail.getAttribute("data-folder");
-
-          const talkData = TALKS_DATA.find((t) => t.folder === folder);
-          if (!talkData || !talkData.images || talkData.images.length === 0) {
-            console.warn(`No images found for folder: ${folder}`);
-            return;
-          }
-
-          // const images = talkData.images;
-          const images = talkData.images.map((img) => decodeURIComponent(img));
-          const thumbImage = talkData.thumb;
-          const imageCount = images.length;
-          const basePath = `talks/${folder}`;
-
-          //   let galleryHTML = `
-          //     <a href="${basePath}/${images[0]}" class="glightbox" data-gallery="${folder}">
-          //         <img src="${basePath}/${thumbImage}" alt="Talk thumbnail">
-          //         <span class="image-count">
-          //             <iconify-icon icon="material-symbols:photo-camera"></iconify-icon>
-          //             ${imageCount} photo${imageCount !== 1 ? "s" : ""}
-          //         </span>
-          //     </a>
-          // `;
-
-          let galleryHTML = `<img src="${basePath}/${thumbImage}" alt="Talk thumbnail">`;
-
-          for (let i = 0; i < images.length; i++) {
-            galleryHTML += `
-                <a href="${basePath}/${images[i]}" 
-                   class="glightbox gallery-trigger" 
-                   data-gallery="${folder}" 
-
-                   data-glightbox="description: ${i + 1} / ${imageCount}"
-                   style="display:none;">
-                </a>
-            `;
-          }
-
-          thumbnail.innerHTML = galleryHTML;
-        });
-      }
-
-      generateGalleries();
-
-      // Photo button click handler
-      document.addEventListener("click", function (e) {
-        if (e.target.closest(".photos-btn")) {
-          e.preventDefault();
-          const card = e.target.closest(".talk-card");
-          const firstGalleryLink = card.querySelector(".gallery-trigger");
-          if (firstGalleryLink) {
-            firstGalleryLink.click();
-          }
-        }
-      });
-
-      setTimeout(() => {
-        GLightbox({
-          touchNavigation: true,
-          loop: false,
-          autoplayVideos: true,
-          slideEffect: "slide",
-          descPosition: "bottom", // This shows slide counter
-          skin: "clean",
-        });
-      }, 100);
-    </script>
+    <script src="gallery.js"></script>
   </body>
 </html>

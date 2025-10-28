@@ -3,6 +3,23 @@
 
 const TALKS_DATA = [
   {
+    "folder": "08AUG17",
+    "thumb": "thumb.jpg",
+    "images": [
+      "gist1.jpg",
+      "gist2.jpg",
+      "gist3.jpg"
+    ]
+  },
+  {
+    "folder": "13DEC19",
+    "thumb": "thumb.jpg",
+    "images": [
+      "thumb%20copy.jpg",
+      "vit1.jpeg"
+    ]
+  },
+  {
     "folder": "15OCT25",
     "thumb": "thumb.jpeg",
     "images": [
