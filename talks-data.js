@@ -24,6 +24,15 @@ const TALKS_DATA = [
     "thumb": "thumb.jpeg",
     "images": [
       "WhatsApp%20Image%202025-10-10%20at%2015.05.29.jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.19.54.jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.19.58.jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.19.59.jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.20.00%20(1).jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.20.00%20(2).jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.20.00.jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.20.03%20(1).jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.20.03.jpeg",
+      "WhatsApp%20Image%202025-10-30%20at%2009.20.04.jpeg",
       "thumb%20copy.jpeg"
     ]
   },
