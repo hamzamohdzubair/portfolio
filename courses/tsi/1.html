@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 1: Python Programming Foundations</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 30px;
+        min-height: 100vh;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .back-button {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 30px;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .module-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .header {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 50px;
+        text-align: center;
+      }
+
+      .module-tag {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      .module-number-display {
+        font-size: 72px;
+        font-weight: 300;
+        opacity: 0.3;
+        line-height: 0.8;
+      }
+
+      .main-title {
+        font-size: 48px;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+        opacity: 0.95;
+        font-weight: 300;
+      }
+
+      .content {
+        padding: 50px;
+      }
+
+      .module-overview {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 40px;
+      }
+
+      .overview-title {
+        font-size: 24px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .overview-text {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .stat-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .stat-value {
+        font-size: 28px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      .stat-label {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+      }
+
+      .section-title {
+        font-size: 28px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .session-details {
+        margin-bottom: 20px;
+      }
+
+      .details-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .detail-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .detail-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .detail-label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .detail-value {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: white;
+      }
+
+      .location-box {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .location-pin {
+        font-size: 2rem;
+      }
+
+      .location-text {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+
+      @media (max-width: 768px) {
+        .details-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .schedule-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 40px;
+      }
+
+      .schedule-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+
+      .session-item {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .session-num {
+        font-size: 0.85rem;
+        opacity: 0.8;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+
+      .session-date {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      @media (max-width: 768px) {
+        .schedule-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .weeks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+
+      .week-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        padding: 25px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .week-card:hover {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-3px);
+      }
+
+      .week-number {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .week-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .week-topics {
+        list-style: none;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .week-topics li {
+        padding: 8px 0;
+        padding-left: 20px;
+        position: relative;
+        line-height: 1.5;
+        font-weight: 300;
+      }
+
+      .week-topics li::before {
+        content: "✓";
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        background: rgba(255, 255, 255, 0.15);
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+      }
+
+      .projects-section {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 40px;
+        border-radius: 15px;
+        margin-bottom: 40px;
+      }
+
+      .projects-title {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .project-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .project-name {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+
+      .project-desc {
+        font-size: 14px;
+        opacity: 0.9;
+        line-height: 1.5;
+        font-weight: 300;
+      }
+
+      .learning-outcomes {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 40px;
+      }
+
+      .outcomes-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 15px;
+      }
+
+      .outcome-item {
+        display: flex;
+        align-items: start;
+        gap: 12px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        border-left: 3px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .outcome-icon {
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+
+      .outcome-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      .tools-section {
+        margin-bottom: 40px;
+      }
+
+      .tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .tool-badge {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .prerequisites {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 40px;
+      }
+
+      .prereq-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .prereq-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      @media (max-width: 768px) {
+        .main-title {
+          font-size: 32px;
+        }
+
+        .content {
+          padding: 30px;
+        }
+
+        .weeks-grid,
+        .outcomes-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="index.html" class="back-button">← Back to All Modules</a>
+
+      <div class="module-container">
+        <div class="header">
+          <div class="module-number-display">01</div>
+          <div class="module-tag">MODULE 1 • 4 WEEKS • FOUNDATION LEVEL</div>
+          <div class="main-title">Python Programming Foundations</div>
+          <div class="subtitle">
+            Master Python from Zero to Production-Ready Code
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="session-details">
+            <div class="details-row">
+              <div class="detail-box">
+                <div class="detail-icon">⏰</div>
+                <div class="detail-label">TIME</div>
+                <div class="detail-value">10 AM - 1 PM</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-icon">📅</div>
+                <div class="detail-label">DURATION</div>
+                <div class="detail-value">3 Hours</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-icon">💻</div>
+                <div class="detail-label">FORMAT</div>
+                <div class="detail-value">Hands-on</div>
+              </div>
+            </div>
+            <div class="location-box">
+              <div class="location-pin">📍</div>
+              <div class="location-text">The Success Institute, Sompura</div>
+            </div>
+          </div>
+          <div class="schedule-section">
+            <h3 class="schedule-title">📅 Session Schedule</h3>
+            <div class="schedule-grid">
+              <div class="session-item">
+                <div class="session-num">Session 1</div>
+                <div class="session-date">15 Nov, Sat</div>
+              </div>
+              <div class="session-item">
+                <div class="session-num">Session 2</div>
+                <div class="session-date">22 Nov, Sat</div>
+              </div>
+              <div class="session-item">
+                <div class="session-num">Session 3</div>
+                <div class="session-date">29 Nov, Sat</div>
+              </div>
+              <div class="session-item">
+                <div class="session-num">Session 4</div>
+                <div class="session-date">6 Dec, Sat</div>
+              </div>
+            </div>
+          </div>
+          <div class="module-overview">
+            <div class="overview-title">Module Overview</div>
+            <p class="overview-text">
+              This comprehensive module takes you from complete beginner to
+              confident Python programmer. You'll learn Python fundamentals,
+              data structures, object-oriented programming, and best practices
+              used in the industry. Through hands-on projects and real-world
+              scenarios, you'll build a solid foundation essential for AI/ML
+              development. No prior programming experience required!
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">⏱️</div>
+              <div class="stat-value">4</div>
+              <div class="stat-label">Weeks</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">📚</div>
+              <div class="stat-value">40+</div>
+              <div class="stat-label">Concepts</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">💻</div>
+              <div class="stat-value">50+</div>
+              <div class="stat-label">Exercises</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🎯</div>
+              <div class="stat-value">5</div>
+              <div class="stat-label">Projects</div>
+            </div>
+          </div>
+
+          <h2 class="section-title">Weekly Breakdown</h2>
+          <div class="weeks-grid">
+            <div class="week-card">
+              <div class="week-number">WEEK 1 - 15th Nov</div>
+              <div class="week-title">Python Basics & Environment Setup</div>
+              <ul class="week-topics">
+                <li>Installing Python & Setting up IDE</li>
+                <li>Variables, Data Types & Type Conversion</li>
+                <li>Operators (Arithmetic, Logical, Comparison)</li>
+                <li>Input/Output Operations</li>
+                <li>Conditional Statements (if-elif-else)</li>
+                <li>Loops (for & while)</li>
+                <li>Break, Continue & Pass</li>
+              </ul>
+            </div>
+
+            <div class="week-card">
+              <div class="week-number">WEEK 2 - 22nd Nov</div>
+              <div class="week-title">Data Structures in Python</div>
+              <ul class="week-topics">
+                <li>Lists - Creation, Indexing, Slicing</li>
+                <li>List Methods & List Comprehensions</li>
+                <li>Tuples & Named Tuples</li>
+                <li>Strings & String Manipulation</li>
+                <li>String Formatting (f-strings, format())</li>
+                <li>Dictionaries - Key-Value Pairs</li>
+                <li>Sets - Operations & Methods</li>
+                <li>Choosing the Right Data Structure</li>
+              </ul>
+            </div>
+
+            <div class="week-card">
+              <div class="week-number">WEEK 3 - 29nd Nov</div>
+              <div class="week-title">Functions & Modules</div>
+              <ul class="week-topics">
+                <li>Defining Functions</li>
+                <li>Parameters & Return Values</li>
+                <li>*args & **kwargs</li>
+                <li>Lambda Functions</li>
+                <li>Map, Filter & Reduce</li>
+                <li>Scope & Namespaces</li>
+                <li>Built-in Functions</li>
+                <li>Importing Modules & Packages</li>
+                <li>Creating Your Own Modules</li>
+              </ul>
+            </div>
+
+            <div class="week-card">
+              <div class="week-number">WEEK 4 - 6th Dec</div>
+              <div class="week-title">OOP & File Handling</div>
+              <ul class="week-topics">
+                <li>Object-Oriented Programming Concepts</li>
+                <li>Classes & Objects</li>
+                <li>Attributes & Methods</li>
+                <li>Inheritance & Polymorphism</li>
+                <li>File Operations (Read/Write)</li>
+                <li>Working with CSV & JSON</li>
+                <li>Exception Handling (try-except)</li>
+                <li>Best Practices & Code Style (PEP 8)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="projects-section">
+            <h2 class="projects-title">🎯 Hands-on Projects</h2>
+            <div class="projects-grid">
+              <div class="project-card">
+                <div class="project-name">1. Calculator Application</div>
+                <div class="project-desc">
+                  Build a command-line calculator with multiple operations and
+                  error handling
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-name">2. Contact Manager</div>
+                <div class="project-desc">
+                  Create a contact management system using dictionaries and file
+                  storage
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-name">3. Data Analyzer</div>
+                <div class="project-desc">
+                  Analyze CSV data files and generate statistical reports
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-name">4. Task Tracker CLI</div>
+                <div class="project-desc">
+                  Build a task management system with categories and priorities
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-name">5. Student Grade System</div>
+                <div class="project-desc">
+                  OOP-based application to manage student records and calculate
+                  grades
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="section-title">Learning Outcomes</h2>
+          <div class="learning-outcomes">
+            <div class="outcomes-list">
+              <div class="outcome-item">
+                <div class="outcome-icon">✨</div>
+                <div class="outcome-text">
+                  Write clean, efficient, and maintainable Python code following
+                  industry best practices
+                </div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-icon">🎯</div>
+                <div class="outcome-text">
+                  Master Python's core data structures and know when to use each
+                  one effectively
+                </div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-icon">🔧</div>
+                <div class="outcome-text">
+                  Build modular, reusable code using functions and
+                  object-oriented programming
+                </div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-icon">📁</div>
+                <div class="outcome-text">
+                  Handle files, parse CSV/JSON data, and manage exceptions
+                  gracefully
+                </div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-icon">💡</div>
+                <div class="outcome-text">
+                  Solve real-world problems using Python and develop algorithmic
+                  thinking
+                </div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-icon">🚀</div>
+                <div class="outcome-text">
+                  Build complete Python applications from scratch with proper
+                  structure
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="section-title">Tools & Technologies</h2>
+          <div class="tools-section">
+            <div class="tools-grid">
+              <div class="tool-badge">🐍 Python 3.11+</div>
+              <div class="tool-badge">💻 VS Code / PyCharm</div>
+              <div class="tool-badge">📝 Jupyter Notebook</div>
+              <div class="tool-badge">🔧 Git & GitHub</div>
+              <div class="tool-badge">📦 pip Package Manager</div>
+              <div class="tool-badge">🐛 Python Debugger</div>
+            </div>
+          </div>
+
+          <div class="prerequisites">
+            <div class="prereq-title">📋 Prerequisites</div>
+            <p class="prereq-text">
+              <strong>No prior programming experience required!</strong> This
+              module is designed for complete beginners. You'll need a laptop
+              with internet connection and enthusiasm to learn. We'll guide you
+              through everything from installation to building your first
+              applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

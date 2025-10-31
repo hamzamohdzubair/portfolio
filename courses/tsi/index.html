@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI/ML Mastery Program - Complete Curriculum</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      /* Home button matching portfolio style */
+      .home-button {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 100;
+      }
+
+      .home-button:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-section {
+        text-align: center;
+        color: white;
+        margin-bottom: 60px;
+        padding: 40px 20px;
+      }
+
+      .hero-tag {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-title {
+        font-size: 64px;
+        font-weight: 300;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 24px;
+        opacity: 0.95;
+        font-weight: 300;
+        margin-bottom: 30px;
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 42px;
+        font-weight: 300;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+      }
+
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .module-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .module-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .status-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        z-index: 10;
+      }
+
+      .status-badge.live {
+        background: rgba(239, 68, 68, 0.9);
+        backdrop-filter: blur(10px);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      .status-badge.coming-soon {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        font-weight: 500;
+      }
+
+      .live-dot {
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        animation: blink 1.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      .module-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .module-number {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 600;
+        flex-shrink: 0;
+      }
+
+      .module-title-section {
+        flex: 1;
+      }
+
+      .module-title {
+        font-size: 22px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      .module-duration {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 300;
+      }
+
+      .module-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      .module-topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .topic-tag {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .module-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .module-level {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .view-details {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 10px 24px;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .view-details:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .course-info {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 40px;
+        margin-top: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .info-title {
+        font-size: 28px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .info-item {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .info-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      .info-label {
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 8px;
+      }
+
+      .info-value {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      /* Animations matching portfolio */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 42px;
+        }
+
+        .modules-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-stats {
+          gap: 30px;
+        }
+
+        .home-button {
+          top: 1rem;
+          left: 1rem;
+          width: 45px;
+          height: 45px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Home button -->
+    <a href="../index.html" class="home-button" title="Back to Portfolio">
+      <iconify-icon icon="material-symbols:home"></iconify-icon>
+    </a>
+
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-tag">PROFESSIONAL CERTIFICATION PROGRAM</div>
+        <h1 class="hero-title">AI/ML Mastery Program</h1>
+        <p class="hero-subtitle">
+          From Foundations to Production - Complete AI/ML Journey
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Modules</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">48</span>
+            <span class="stat-label">Weeks</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Topics Covered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modules-grid">
+        <!-- Module 1 -->
+        <div class="module-card" onclick="window.location.href='1.html'">
+          <span class="status-badge live">
+            <span class="live-dot"></span>
+            Starting 15th Nov
+          </span>
+          <div class="module-header">
+            <div class="module-number">01</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Python Programming Foundations</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Beginner</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Master Python from scratch with hands-on coding exercises. Build a
+            strong programming foundation essential for AI/ML development.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Python Basics</span>
+            <span class="topic-tag">Data Structures</span>
+            <span class="topic-tag">OOP</span>
+            <span class="topic-tag">File Handling</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">🎯 Foundation Level</span>
+            <a href="module1.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card" onclick="window.location.href='module2.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">02</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Mathematics for AI/ML</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Beginner</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Build mathematical intuition required for machine learning. Learn
+            Linear Algebra, Calculus, Statistics, and Probability with practical
+            applications.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Linear Algebra</span>
+            <span class="topic-tag">Calculus</span>
+            <span class="topic-tag">Statistics</span>
+            <span class="topic-tag">Probability</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">🎯 Foundation Level</span>
+            <a href="module2.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card" onclick="window.location.href='module3.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">03</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Data Analysis & Visualization</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Intermediate</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Master data manipulation with NumPy and Pandas. Create stunning
+            visualizations and perform exploratory data analysis on real
+            datasets.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">NumPy</span>
+            <span class="topic-tag">Pandas</span>
+            <span class="topic-tag">EDA</span>
+            <span class="topic-tag">Matplotlib</span>
+            <span class="topic-tag">Seaborn</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">📊 Data Analysis</span>
+            <a href="module3.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="module-card" onclick="window.location.href='module4.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">04</div>
+            <div class="module-title-section">
+              <h3 class="module-title">SQL & Database Management</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Intermediate</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Learn to query, manipulate and manage data using SQL. Understand
+            database design principles and work with both SQL and NoSQL
+            databases.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">SQL Queries</span>
+            <span class="topic-tag">Database Design</span>
+            <span class="topic-tag">NoSQL</span>
+            <span class="topic-tag">MongoDB</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">📊 Data Management</span>
+            <a href="module4.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="module-card" onclick="window.location.href='module5.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">05</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Machine Learning Fundamentals</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Intermediate</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Dive into supervised and unsupervised learning. Build and evaluate
+            ML models using scikit-learn. Master feature engineering and model
+            selection.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Regression</span>
+            <span class="topic-tag">Classification</span>
+            <span class="topic-tag">Clustering</span>
+            <span class="topic-tag">Model Evaluation</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">🤖 Machine Learning</span>
+            <a href="module5.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="module-card" onclick="window.location.href='module6.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">06</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Advanced Machine Learning</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Advanced</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Explore ensemble methods, time series analysis, and recommender
+            systems. Learn advanced techniques for model optimization and
+            hyperparameter tuning.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Ensemble Methods</span>
+            <span class="topic-tag">Time Series</span>
+            <span class="topic-tag">Recommender Systems</span>
+            <span class="topic-tag">XGBoost</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">🤖 Advanced ML</span>
+            <a href="module6.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="module-card" onclick="window.location.href='module7.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">07</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Deep Learning & Neural Networks</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Advanced</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Master neural networks from scratch. Learn CNNs for image processing
+            and RNNs for sequential data. Implement deep learning with
+            TensorFlow and PyTorch.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Neural Networks</span>
+            <span class="topic-tag">CNNs</span>
+            <span class="topic-tag">RNNs/LSTMs</span>
+            <span class="topic-tag">Transfer Learning</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">🧠 Deep Learning</span>
+            <a href="module7.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 8 -->
+        <div class="module-card" onclick="window.location.href='module8.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">08</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Computer Vision</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Advanced</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Build end-to-end computer vision applications. Master object
+            detection, image segmentation, face recognition, and video analysis
+            techniques.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Image Processing</span>
+            <span class="topic-tag">Object Detection</span>
+            <span class="topic-tag">YOLO</span>
+            <span class="topic-tag">Face Recognition</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">👁️ Computer Vision</span>
+            <a href="module8.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 9 -->
+        <div class="module-card" onclick="window.location.href='module9.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">09</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Natural Language Processing</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Advanced</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Process and analyze text data at scale. Learn word embeddings,
+            transformers, BERT, and build applications like chatbots and
+            sentiment analyzers.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Text Processing</span>
+            <span class="topic-tag">Word Embeddings</span>
+            <span class="topic-tag">Transformers</span>
+            <span class="topic-tag">BERT</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">💬 NLP</span>
+            <a href="module9.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 10 -->
+        <div class="module-card" onclick="window.location.href='module10.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">10</div>
+            <div class="module-title-section">
+              <h3 class="module-title">
+                Generative AI & Large Language Models
+              </h3>
+              <div class="module-duration">⏱️ 4 Weeks • Advanced</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Explore the world of Generative AI. Master GPT architecture, prompt
+            engineering, LLM fine-tuning, and build RAG systems for enterprise
+            applications.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">GPT Architecture</span>
+            <span class="topic-tag">Prompt Engineering</span>
+            <span class="topic-tag">Fine-tuning</span>
+            <span class="topic-tag">RAG Systems</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">✨ Generative AI</span>
+            <a href="module10.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 11 -->
+        <div class="module-card" onclick="window.location.href='module11.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">11</div>
+            <div class="module-title-section">
+              <h3 class="module-title">MLOps & Production Deployment</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Advanced</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Take your ML models to production. Learn deployment strategies,
+            containerization with Docker, orchestration, CI/CD pipelines, and
+            model monitoring.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Flask/FastAPI</span>
+            <span class="topic-tag">Docker</span>
+            <span class="topic-tag">Kubernetes</span>
+            <span class="topic-tag">Model Monitoring</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">🚀 Deployment</span>
+            <a href="module11.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+
+        <!-- Module 12 -->
+        <div class="module-card" onclick="window.location.href='module12.html'">
+          <span class="status-badge coming-soon">Coming Soon</span>
+          <div class="module-header">
+            <div class="module-number">12</div>
+            <div class="module-title-section">
+              <h3 class="module-title">Capstone Project & Portfolio</h3>
+              <div class="module-duration">⏱️ 4 Weeks • Capstone</div>
+            </div>
+          </div>
+          <p class="module-description">
+            Build an end-to-end AI/ML project from scratch. Create your
+            professional portfolio, prepare for technical interviews, and
+            showcase your expertise.
+          </p>
+          <div class="module-topics">
+            <span class="topic-tag">Project Planning</span>
+            <span class="topic-tag">Full-Stack ML</span>
+            <span class="topic-tag">Portfolio</span>
+            <span class="topic-tag">Interview Prep</span>
+          </div>
+          <div class="module-footer">
+            <span class="module-level">🎓 Capstone</span>
+            <a href="module12.html" class="view-details">View Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-info">
+        <h2 class="info-title">What Makes This Program Unique</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-icon">👨‍🏫</div>
+            <div class="info-label">Expert Instruction</div>
+            <div class="info-value">
+              Learn from industry veterans with 10+ years of experience in AI/ML
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">💼</div>
+            <div class="info-label">Real-World Projects</div>
+            <div class="info-value">
+              Work on 50+ hands-on projects from various industry domains
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🎯</div>
+            <div class="info-label">Job-Ready Skills</div>
+            <div class="info-value">
+              Comprehensive curriculum aligned with current industry
+              requirements
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🤝</div>
+            <div class="info-label">Mentorship</div>
+            <div class="info-value">
+              1-on-1 mentorship sessions with experienced data scientists
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

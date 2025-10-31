@@ -106,7 +106,7 @@ body {
 /* Quick Links Section */
 .quick-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.6rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
   justify-content: center;
@@ -114,7 +114,7 @@ body {
 
 .quick-link-btn {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.0rem;
   background: white;
   color: #667eea;
   text-decoration: none;
