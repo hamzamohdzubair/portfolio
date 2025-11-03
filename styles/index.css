@@ -2,6 +2,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: auto;
 }
 
 .container {
@@ -240,5 +245,46 @@ body.variant-5 {
 @media (prefers-color-scheme: dark) {
   body {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  }
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .container {
+    min-height: auto;
+  }
+
+  /* Prevent zoom on input focus */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Better touch targets */
+  .social-link {
+    min-width: 50px;
+    min-height: 50px;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 400px) {
+  .name {
+    font-size: 1.75rem;
+  }
+
+  .quick-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .quick-link-btn {
+    width: 100%;
+    text-align: center;
   }
 }
