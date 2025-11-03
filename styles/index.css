@@ -153,10 +153,8 @@ body.variant-5 {
   background: linear-gradient(135deg, #a3bded 0%, #6991c7 100%);
 }
 
-/* Floating particles animation */
-
-/* Particles container - prevents overflow */
-.particles-wrapper {
+/* Twinkling Stars */
+.stars-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -166,46 +164,69 @@ body.variant-5 {
   pointer-events: none;
   z-index: 0;
 }
-.particle {
+
+.star {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.6);
+  width: 2px;
+  height: 2px;
+  background: white;
   border-radius: 50%;
-  opacity: 0;
-  animation: float 6s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: twinkle 3s infinite ease-in-out;
 }
 
-.particle:nth-child(1) {
+.star:nth-child(1) {
+  top: 20%;
   left: 10%;
   animation-delay: 0s;
 }
-
-.particle:nth-child(2) {
+.star:nth-child(2) {
+  top: 40%;
   left: 30%;
+  animation-delay: 0.5s;
+}
+.star:nth-child(3) {
+  top: 60%;
+  left: 50%;
   animation-delay: 1s;
 }
-
-.particle:nth-child(3) {
-  left: 50%;
+.star:nth-child(4) {
+  top: 80%;
+  left: 70%;
+  animation-delay: 1.5s;
+}
+.star:nth-child(5) {
+  top: 15%;
+  left: 80%;
   animation-delay: 2s;
 }
-
-.particle:nth-child(4) {
-  left: 70%;
-  animation-delay: 3s;
+.star:nth-child(6) {
+  top: 35%;
+  left: 60%;
+  animation-delay: 2.5s;
 }
-
-.particle:nth-child(5) {
+.star:nth-child(7) {
+  top: 70%;
+  left: 20%;
+  animation-delay: 1.2s;
+}
+.star:nth-child(8) {
+  top: 50%;
   left: 90%;
-  animation-delay: 4s;
+  animation-delay: 1.8s;
 }
 
-/* .particle:nth-child(6) { */
-/*     left: 60%; */
-/*     animation-delay: 5s; */
-/* } */
-
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
 @keyframes float {
   0%,
   100% {
