@@ -7,7 +7,7 @@ function generateGalleries() {
     const folder = thumbnail.getAttribute("data-folder");
 
     const talkData = TALKS_DATA.find((t) => t.folder === folder);
-    if (!talkData || !talkData.images || talkData.images.length === 0) {
+    if (!talkData || !talkData.images) {
       console.warn(`No images found for folder: ${folder}`);
       return;
     }
