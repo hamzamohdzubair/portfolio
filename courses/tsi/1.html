@@ -21,275 +21,476 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="/styles/common.css" />
     <link rel="stylesheet" href="/styles/module.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="page-wrapper">
       <a href="index.html" class="back-button">← Back to All Modules</a>
 
-      <div class="module-container">
-        <div class="header">
-          <div class="module-number-display">01</div>
-          <div class="module-tag">MODULE 1 • 4 WEEKS • FOUNDATION LEVEL</div>
-          <div class="main-title">Python Programming Foundations</div>
-          <div class="subtitle">
-            Master Python from Zero to Production-Ready Code
+      <div class="content-layout">
+        <!-- Main Content -->
+        <div class="module-container">
+          <div class="header">
+            <div class="module-number-display">01</div>
+            <div class="module-tag">MODULE 1 • 4 WEEKS • FOUNDATION LEVEL</div>
+            <div class="main-title">Python Programming Foundations</div>
+            <div class="subtitle">
+              Master Python from Zero to Production-Ready Code
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="session-details">
+              <div class="details-row">
+                <div class="detail-box">
+                  <div class="detail-icon">⏰</div>
+                  <div class="detail-label">TIME</div>
+                  <div class="detail-value">9 AM - 1 PM</div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-icon">📅</div>
+                  <div class="detail-label">DURATION</div>
+                  <div class="detail-value">4 Hours</div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-icon">💻</div>
+                  <div class="detail-label">FORMAT</div>
+                  <div class="detail-value">Hands-on</div>
+                </div>
+              </div>
+              <div class="location-box">
+                <div class="location-pin">📍</div>
+                <div class="location-text">The Success Institute, Sompura</div>
+              </div>
+            </div>
+            <div class="schedule-section">
+              <h3 class="schedule-title">📅 Session Schedule</h3>
+              <div class="schedule-grid">
+                <div class="session-item">
+                  <div class="session-num">Session 1</div>
+                  <div class="session-date">15 Nov, Sat</div>
+                </div>
+                <div class="session-item">
+                  <div class="session-num">Session 2</div>
+                  <div class="session-date">22 Nov, Sat</div>
+                </div>
+                <div class="session-item">
+                  <div class="session-num">Session 3</div>
+                  <div class="session-date">29 Nov, Sat</div>
+                </div>
+                <div class="session-item">
+                  <div class="session-num">Session 4</div>
+                  <div class="session-date">6 Dec, Sat</div>
+                </div>
+              </div>
+            </div>
+            <div class="module-overview">
+              <div class="overview-title">Module Overview</div>
+              <p class="overview-text">
+                This comprehensive module takes you from complete beginner to
+                confident Python programmer. You'll learn Python fundamentals,
+                data structures, object-oriented programming, and best practices
+                used in the industry. Through hands-on projects and real-world
+                scenarios, you'll build a solid foundation essential for AI/ML
+                development. No prior programming experience required!
+              </p>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-value">4</div>
+                <div class="stat-label">Weeks</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-value">40+</div>
+                <div class="stat-label">Concepts</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">💻</div>
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Exercises</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-value">5</div>
+                <div class="stat-label">Projects</div>
+              </div>
+            </div>
+
+            <h2 class="section-title">Weekly Breakdown</h2>
+            <div class="weeks-grid">
+              <div class="week-card">
+                <div class="week-number">WEEK 1 - 15th Nov</div>
+                <div class="week-title">Python Basics & Environment Setup</div>
+                <ul class="week-topics">
+                  <li>Installing Python & Setting up IDE</li>
+                  <li>Variables, Data Types & Type Conversion</li>
+                  <li>Operators (Arithmetic, Logical, Comparison)</li>
+                  <li>Input/Output Operations</li>
+                  <li>Conditional Statements (if-elif-else)</li>
+                  <li>Loops (for & while)</li>
+                  <li>Break, Continue & Pass</li>
+                </ul>
+              </div>
+
+              <div class="week-card">
+                <div class="week-number">WEEK 2 - 22nd Nov</div>
+                <div class="week-title">Data Structures in Python</div>
+                <ul class="week-topics">
+                  <li>Lists - Creation, Indexing, Slicing</li>
+                  <li>List Methods & List Comprehensions</li>
+                  <li>Tuples & Named Tuples</li>
+                  <li>Strings & String Manipulation</li>
+                  <li>String Formatting (f-strings, format())</li>
+                  <li>Dictionaries - Key-Value Pairs</li>
+                  <li>Sets - Operations & Methods</li>
+                  <li>Choosing the Right Data Structure</li>
+                </ul>
+              </div>
+
+              <div class="week-card">
+                <div class="week-number">WEEK 3 - 29nd Nov</div>
+                <div class="week-title">Functions & Modules</div>
+                <ul class="week-topics">
+                  <li>Defining Functions</li>
+                  <li>Parameters & Return Values</li>
+                  <li>*args & **kwargs</li>
+                  <li>Lambda Functions</li>
+                  <li>Map, Filter & Reduce</li>
+                  <li>Scope & Namespaces</li>
+                  <li>Built-in Functions</li>
+                  <li>Importing Modules & Packages</li>
+                  <li>Creating Your Own Modules</li>
+                </ul>
+              </div>
+
+              <div class="week-card">
+                <div class="week-number">WEEK 4 - 6th Dec</div>
+                <div class="week-title">OOP & File Handling</div>
+                <ul class="week-topics">
+                  <li>Object-Oriented Programming Concepts</li>
+                  <li>Classes & Objects</li>
+                  <li>Attributes & Methods</li>
+                  <li>Inheritance & Polymorphism</li>
+                  <li>File Operations (Read/Write)</li>
+                  <li>Working with CSV & JSON</li>
+                  <li>Exception Handling (try-except)</li>
+                  <li>Best Practices & Code Style (PEP 8)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="projects-section">
+              <h2 class="projects-title">🎯 Hands-on Projects</h2>
+              <div class="projects-grid">
+                <div class="project-card">
+                  <div class="project-name">1. Calculator Application</div>
+                  <div class="project-desc">
+                    Build a command-line calculator with multiple operations and
+                    error handling
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-name">2. Contact Manager</div>
+                  <div class="project-desc">
+                    Create a contact management system using dictionaries and
+                    file storage
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-name">3. Data Analyzer</div>
+                  <div class="project-desc">
+                    Analyze CSV data files and generate statistical reports
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-name">4. Task Tracker CLI</div>
+                  <div class="project-desc">
+                    Build a task management system with categories and
+                    priorities
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-name">5. Student Grade System</div>
+                  <div class="project-desc">
+                    OOP-based application to manage student records and
+                    calculate grades
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="section-title">Learning Outcomes</h2>
+            <div class="learning-outcomes">
+              <div class="outcomes-list">
+                <div class="outcome-item">
+                  <div class="outcome-icon">✨</div>
+                  <div class="outcome-text">
+                    Write clean, efficient, and maintainable Python code
+                    following industry best practices
+                  </div>
+                </div>
+                <div class="outcome-item">
+                  <div class="outcome-icon">🎯</div>
+                  <div class="outcome-text">
+                    Master Python's core data structures and know when to use
+                    each one effectively
+                  </div>
+                </div>
+                <div class="outcome-item">
+                  <div class="outcome-icon">🔧</div>
+                  <div class="outcome-text">
+                    Build modular, reusable code using functions and
+                    object-oriented programming
+                  </div>
+                </div>
+                <div class="outcome-item">
+                  <div class="outcome-icon">📁</div>
+                  <div class="outcome-text">
+                    Handle files, parse CSV/JSON data, and manage exceptions
+                    gracefully
+                  </div>
+                </div>
+                <div class="outcome-item">
+                  <div class="outcome-icon">💡</div>
+                  <div class="outcome-text">
+                    Solve real-world problems using Python and develop
+                    algorithmic thinking
+                  </div>
+                </div>
+                <div class="outcome-item">
+                  <div class="outcome-icon">🚀</div>
+                  <div class="outcome-text">
+                    Build complete Python applications from scratch with proper
+                    structure
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="section-title">Tools & Technologies</h2>
+            <div class="tools-section">
+              <div class="tools-grid">
+                <div class="tool-badge">🐍 Python 3.11+</div>
+                <div class="tool-badge">💻 VS Code / PyCharm</div>
+                <div class="tool-badge">📝 Jupyter Notebook</div>
+                <div class="tool-badge">🔧 Git & GitHub</div>
+                <div class="tool-badge">📦 pip Package Manager</div>
+                <div class="tool-badge">🐛 Python Debugger</div>
+              </div>
+            </div>
+
+            <div class="prerequisites">
+              <div class="prereq-title">📋 Prerequisites</div>
+              <p class="prereq-text">
+                <strong>No prior programming experience required!</strong> This
+                module is designed for complete beginners. You'll need a laptop
+                with internet connection and enthusiasm to learn. We'll guide
+                you through everything from installation to building your first
+                applications.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="content">
-          <div class="session-details">
-            <div class="details-row">
-              <div class="detail-box">
-                <div class="detail-icon">⏰</div>
-                <div class="detail-label">TIME</div>
-                <div class="detail-value">9 AM - 1 PM</div>
+        <!-- Registration Sidebar -->
+        <aside class="registration-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-pricing">
+              <div class="total-fee">
+                <span class="fee-label">Total Course Fee</span>
+                <span class="fee-amount">₹2,998</span>
               </div>
-              <div class="detail-box">
-                <div class="detail-icon">📅</div>
-                <div class="detail-label">DURATION</div>
-                <div class="detail-value">4 Hours</div>
+
+              <div class="registration-fee">
+                <span class="registration-label">Register Now With Just</span>
+                <span class="registration-amount">₹299</span>
               </div>
-              <div class="detail-box">
-                <div class="detail-icon">💻</div>
-                <div class="detail-label">FORMAT</div>
-                <div class="detail-value">Hands-on</div>
+
+              <div class="payment-note">
+                <span class="note-icon">💡</span>
+                <span class="note-text"
+                  >Remaining ₹2,699 can be paid anytime before the last
+                  class</span
+                >
               </div>
             </div>
-            <div class="location-box">
-              <div class="location-pin">📍</div>
-              <div class="location-text">The Success Institute, Sompura</div>
+
+            <button class="sidebar-register-btn" onclick="openPaymentModal()">
+              Register Now - ₹299
+            </button>
+
+            <div class="sidebar-benefits">
+              <div class="benefit-item">✓ 4 Weeks Course</div>
+              <div class="benefit-item">✓ 50+ Hands-on Exercises</div>
+              <div class="benefit-item">✓ 5 Real-world Projects</div>
+              <div class="benefit-item">✓ Certificate of Completion</div>
             </div>
-          </div>
-          <div class="schedule-section">
-            <h3 class="schedule-title">📅 Session Schedule</h3>
-            <div class="schedule-grid">
-              <div class="session-item">
-                <div class="session-num">Session 1</div>
-                <div class="session-date">15 Nov, Sat</div>
-              </div>
-              <div class="session-item">
-                <div class="session-num">Session 2</div>
-                <div class="session-date">22 Nov, Sat</div>
-              </div>
-              <div class="session-item">
-                <div class="session-num">Session 3</div>
-                <div class="session-date">29 Nov, Sat</div>
-              </div>
-              <div class="session-item">
-                <div class="session-num">Session 4</div>
-                <div class="session-date">6 Dec, Sat</div>
+
+            <div class="guarantee-badge">
+              <div class="guarantee-icon">🛡️</div>
+              <div class="guarantee-text">
+                <strong>100% Money-Back Guarantee</strong>
+                <p>No questions asked. Full refund available anytime.</p>
               </div>
             </div>
           </div>
-          <div class="module-overview">
-            <div class="overview-title">Module Overview</div>
-            <p class="overview-text">
-              This comprehensive module takes you from complete beginner to
-              confident Python programmer. You'll learn Python fundamentals,
-              data structures, object-oriented programming, and best practices
-              used in the industry. Through hands-on projects and real-world
-              scenarios, you'll build a solid foundation essential for AI/ML
-              development. No prior programming experience required!
-            </p>
-          </div>
+        </aside>
+      </div>
+    </div>
 
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-icon">⏱️</div>
-              <div class="stat-value">4</div>
-              <div class="stat-label">Weeks</div>
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="payment-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Complete Your Registration</h2>
+          <button class="close-button" onclick="closePaymentModal()">
+            &times;
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Module Info -->
+          <div class="modal-module-info">
+            <div class="module-info-header">
+              <span class="module-badge">Module 01</span>
+              <h3 class="module-info-title">Python Programming Foundations</h3>
             </div>
-            <div class="stat-card">
-              <div class="stat-icon">📚</div>
-              <div class="stat-value">40+</div>
-              <div class="stat-label">Concepts</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-icon">💻</div>
-              <div class="stat-value">50+</div>
-              <div class="stat-label">Exercises</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-icon">🎯</div>
-              <div class="stat-value">5</div>
-              <div class="stat-label">Projects</div>
+            <div class="module-info-details">
+              <span class="info-detail">⏱️ 4 Weeks</span>
+              <span class="info-detail">📅 Starts 15th Nov</span>
+              <span class="info-detail">💻 Hands-on Learning</span>
             </div>
           </div>
 
-          <h2 class="section-title">Weekly Breakdown</h2>
-          <div class="weeks-grid">
-            <div class="week-card">
-              <div class="week-number">WEEK 1 - 15th Nov</div>
-              <div class="week-title">Python Basics & Environment Setup</div>
-              <ul class="week-topics">
-                <li>Installing Python & Setting up IDE</li>
-                <li>Variables, Data Types & Type Conversion</li>
-                <li>Operators (Arithmetic, Logical, Comparison)</li>
-                <li>Input/Output Operations</li>
-                <li>Conditional Statements (if-elif-else)</li>
-                <li>Loops (for & while)</li>
-                <li>Break, Continue & Pass</li>
-              </ul>
+          <!-- Pricing Section -->
+          <div class="pricing-section">
+            <div class="price-row">
+              <span class="price-label">Registration Fee</span>
+              <span class="price-amount" id="originalPrice">₹299</span>
             </div>
-
-            <div class="week-card">
-              <div class="week-number">WEEK 2 - 22nd Nov</div>
-              <div class="week-title">Data Structures in Python</div>
-              <ul class="week-topics">
-                <li>Lists - Creation, Indexing, Slicing</li>
-                <li>List Methods & List Comprehensions</li>
-                <li>Tuples & Named Tuples</li>
-                <li>Strings & String Manipulation</li>
-                <li>String Formatting (f-strings, format())</li>
-                <li>Dictionaries - Key-Value Pairs</li>
-                <li>Sets - Operations & Methods</li>
-                <li>Choosing the Right Data Structure</li>
-              </ul>
+            <div
+              class="price-row discount-row"
+              id="discountRow"
+              style="display: none"
+            >
+              <span class="price-label">Discount</span>
+              <span class="price-amount discount-amount" id="discountAmount"
+                >-₹0</span
+              >
             </div>
-
-            <div class="week-card">
-              <div class="week-number">WEEK 3 - 29nd Nov</div>
-              <div class="week-title">Functions & Modules</div>
-              <ul class="week-topics">
-                <li>Defining Functions</li>
-                <li>Parameters & Return Values</li>
-                <li>*args & **kwargs</li>
-                <li>Lambda Functions</li>
-                <li>Map, Filter & Reduce</li>
-                <li>Scope & Namespaces</li>
-                <li>Built-in Functions</li>
-                <li>Importing Modules & Packages</li>
-                <li>Creating Your Own Modules</li>
-              </ul>
+            <div class="price-row total-row">
+              <span class="price-label-total">Pay Now</span>
+              <span class="price-amount-total" id="totalAmount">₹299</span>
             </div>
-
-            <div class="week-card">
-              <div class="week-number">WEEK 4 - 6th Dec</div>
-              <div class="week-title">OOP & File Handling</div>
-              <ul class="week-topics">
-                <li>Object-Oriented Programming Concepts</li>
-                <li>Classes & Objects</li>
-                <li>Attributes & Methods</li>
-                <li>Inheritance & Polymorphism</li>
-                <li>File Operations (Read/Write)</li>
-                <li>Working with CSV & JSON</li>
-                <li>Exception Handling (try-except)</li>
-                <li>Best Practices & Code Style (PEP 8)</li>
-              </ul>
+            <div class="pricing-note">
+              <span class="pricing-note-icon">💡</span>
+              <span class="pricing-note-text"
+                >Remaining ₹2,699 can be paid before the last class</span
+              >
             </div>
           </div>
 
-          <div class="projects-section">
-            <h2 class="projects-title">🎯 Hands-on Projects</h2>
-            <div class="projects-grid">
-              <div class="project-card">
-                <div class="project-name">1. Calculator Application</div>
-                <div class="project-desc">
-                  Build a command-line calculator with multiple operations and
-                  error handling
-                </div>
-              </div>
-              <div class="project-card">
-                <div class="project-name">2. Contact Manager</div>
-                <div class="project-desc">
-                  Create a contact management system using dictionaries and file
-                  storage
-                </div>
-              </div>
-              <div class="project-card">
-                <div class="project-name">3. Data Analyzer</div>
-                <div class="project-desc">
-                  Analyze CSV data files and generate statistical reports
-                </div>
-              </div>
-              <div class="project-card">
-                <div class="project-name">4. Task Tracker CLI</div>
-                <div class="project-desc">
-                  Build a task management system with categories and priorities
-                </div>
-              </div>
-              <div class="project-card">
-                <div class="project-name">5. Student Grade System</div>
-                <div class="project-desc">
-                  OOP-based application to manage student records and calculate
-                  grades
-                </div>
-              </div>
+          <!-- Coupon Code Section -->
+          <div class="coupon-section">
+            <div class="coupon-input-group">
+              <input
+                type="text"
+                id="couponCode"
+                class="coupon-input"
+                placeholder="Enter coupon code"
+                maxlength="20"
+              />
+              <button class="apply-coupon-btn" onclick="applyCoupon()">
+                Apply
+              </button>
             </div>
+            <div id="couponMessage" class="coupon-message"></div>
           </div>
 
-          <h2 class="section-title">Learning Outcomes</h2>
-          <div class="learning-outcomes">
-            <div class="outcomes-list">
-              <div class="outcome-item">
-                <div class="outcome-icon">✨</div>
-                <div class="outcome-text">
-                  Write clean, efficient, and maintainable Python code following
-                  industry best practices
-                </div>
+          <!-- Student Details Form -->
+          <div class="student-details-section">
+            <h3 class="section-heading">Student Details</h3>
+            <form id="studentDetailsForm">
+              <div class="form-group">
+                <label for="studentName"
+                  >Full Name <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="studentName"
+                  class="form-input"
+                  placeholder="Enter your full name"
+                  required
+                />
               </div>
-              <div class="outcome-item">
-                <div class="outcome-icon">🎯</div>
-                <div class="outcome-text">
-                  Master Python's core data structures and know when to use each
-                  one effectively
-                </div>
+              <div class="form-group">
+                <label for="studentEmail"
+                  >Email Address <span class="required">*</span></label
+                >
+                <input
+                  type="email"
+                  id="studentEmail"
+                  class="form-input"
+                  placeholder="Enter your email"
+                  required
+                />
               </div>
-              <div class="outcome-item">
-                <div class="outcome-icon">🔧</div>
-                <div class="outcome-text">
-                  Build modular, reusable code using functions and
-                  object-oriented programming
-                </div>
+              <div class="form-group">
+                <label for="studentPhone"
+                  >Phone Number <span class="required">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="studentPhone"
+                  class="form-input"
+                  placeholder="Enter your phone number"
+                  pattern="[0-9]{10}"
+                  required
+                />
               </div>
-              <div class="outcome-item">
-                <div class="outcome-icon">📁</div>
-                <div class="outcome-text">
-                  Handle files, parse CSV/JSON data, and manage exceptions
-                  gracefully
-                </div>
-              </div>
-              <div class="outcome-item">
-                <div class="outcome-icon">💡</div>
-                <div class="outcome-text">
-                  Solve real-world problems using Python and develop algorithmic
-                  thinking
-                </div>
-              </div>
-              <div class="outcome-item">
-                <div class="outcome-icon">🚀</div>
-                <div class="outcome-text">
-                  Build complete Python applications from scratch with proper
-                  structure
-                </div>
-              </div>
-            </div>
+            </form>
           </div>
 
-          <h2 class="section-title">Tools & Technologies</h2>
-          <div class="tools-section">
-            <div class="tools-grid">
-              <div class="tool-badge">🐍 Python 3.11+</div>
-              <div class="tool-badge">💻 VS Code / PyCharm</div>
-              <div class="tool-badge">📝 Jupyter Notebook</div>
-              <div class="tool-badge">🔧 Git & GitHub</div>
-              <div class="tool-badge">📦 pip Package Manager</div>
-              <div class="tool-badge">🐛 Python Debugger</div>
-            </div>
+          <!-- Payment Button -->
+          <button class="payment-button" onclick="initiatePayment()">
+            <span class="payment-button-text">Proceed to Payment</span>
+            <span class="payment-button-amount" id="paymentButtonAmount"
+              >₹299</span
+            >
+          </button>
+
+          <div class="modal-guarantee">
+            <span class="modal-guarantee-icon">🛡️</span>
+            <span class="modal-guarantee-text"
+              >100% Money-Back Guarantee - No Questions Asked</span
+            >
           </div>
 
-          <div class="prerequisites">
-            <div class="prereq-title">📋 Prerequisites</div>
-            <p class="prereq-text">
-              <strong>No prior programming experience required!</strong> This
-              module is designed for complete beginners. You'll need a laptop
-              with internet connection and enthusiasm to learn. We'll guide you
-              through everything from installation to building your first
-              applications.
-            </p>
+          <div class="payment-security">
+            <span class="security-icon">🔒</span>
+            <span class="security-text"
+              >Secure payment powered by Dodo Payments</span
+            >
           </div>
         </div>
       </div>
     </div>
+
+    <script src="/scripts/payment.js"></script>
+
+    <footer>
+      <div>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/terms.html">Terms & Conditions</a>
+        <a href="/refund-policy.html">Refund Policy</a>
+      </div>
+      <p>
+        © 2025 Hamza Zubair. All rights reserved.
+      </p>
+    </footer>
   </body>
 </html>

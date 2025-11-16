@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - The Success Institute</title>
+    <link rel="stylesheet" href="/styles/common.css" />
+    <style>
+      body {
+        padding: 30px;
+      }
+
+      .page-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .back-button {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 30px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        font-size: 42px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+      }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 35px 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .contact-card:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .contact-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .contact-info {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+      }
+
+      .contact-info a {
+        color: #a855f7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-info a:hover {
+        color: #6366f1;
+        text-decoration: underline;
+      }
+
+      .map-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 50px;
+      }
+
+      .map-title {
+        font-size: 28px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .map-placeholder {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 18px;
+      }
+
+      .hours-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 40px;
+      }
+
+      .hours-title {
+        font-size: 28px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .hours-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .hours-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        border-left: 3px solid #6366f1;
+      }
+
+      .day {
+        font-weight: 600;
+        color: white;
+      }
+
+      .time {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        .subtitle {
+          font-size: 16px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .map-section,
+        .hours-section {
+          padding: 30px 25px;
+        }
+
+        .map-placeholder {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <a href="/index.html" class="back-button">← Back to Home</a>
+
+      <h1>Contact Us</h1>
+      <p class="subtitle">
+        Have questions? We're here to help! Reach out to us through any of the
+        channels below.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <h3 class="contact-title">Visit Us</h3>
+          <p class="contact-info">
+            The Success Institute<br />
+            Sompura, [City Name]<br />
+            [State], India - [PIN Code]
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <h3 class="contact-title">Email Us</h3>
+          <p class="contact-info">
+            General Inquiries:<br />
+            <a href="mailto:info@thesuccessinstitute.com"
+              >info@thesuccessinstitute.com</a
+            ><br /><br />
+            Refunds:<br />
+            <a href="mailto:refunds@thesuccessinstitute.com"
+              >refunds@thesuccessinstitute.com</a
+            >
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📱</div>
+          <h3 class="contact-title">Call Us</h3>
+          <p class="contact-info">
+            Phone: <a href="tel:+91XXXXXXXXXX">+91 XXX-XXX-XXXX</a><br />
+            WhatsApp: <a href="https://wa.me/91XXXXXXXXXX">+91 XXX-XXX-XXXX</a
+            ><br /><br />
+            <small>Available: Mon-Sat, 9 AM - 6 PM</small>
+          </p>
+        </div>
+      </div>
+
+      <div class="map-section">
+        <h2 class="map-title">📍 Find Us on the Map</h2>
+        <div class="map-placeholder">
+          <!-- Replace this with actual Google Maps embed -->
+          <div style="text-align: center;">
+            <p style="margin-bottom: 15px;">Map will be embedded here</p>
+            <p style="font-size: 14px; color: rgba(255, 255, 255, 0.4);">
+              Add Google Maps embed code for your location
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hours-section">
+        <h2 class="hours-title">⏰ Office & Class Hours</h2>
+        <div class="hours-grid">
+          <div class="hours-item">
+            <span class="day">Monday - Friday</span>
+            <span class="time">9:00 AM - 6:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="day">Saturday</span>
+            <span class="time">9:00 AM - 5:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="day">Sunday</span>
+            <span class="time">Closed</span>
+          </div>
+        </div>
+        <p
+          style="
+            text-align: center;
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+          "
+        >
+          <strong>Classes:</strong> Typically held on Saturdays, 9 AM - 1 PM<br />
+          <em>Specific schedules vary by module</em>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

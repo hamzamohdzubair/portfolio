@@ -14,6 +14,11 @@ const TALKS_DATA = [
     ]
   },
   {
+    "folder": "02NOV25",
+    "thumb": "thumb.png",
+    "images": []
+  },
+  {
     "folder": "08AUG17",
     "thumb": "thumb.jpg",
     "images": [

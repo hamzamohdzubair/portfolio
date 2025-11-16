@@ -28,7 +28,7 @@ folders.forEach(folder => {
   // const galleryImages = files.filter(f => !/^thumb\./i.test(f));
   const galleryImages = files.filter(f => !/^thumb\./i.test(f)).map(f => encodeURIComponent(f))
 
-  if (thumb && galleryImages.length > 0) {
+  if (thumb || galleryImages.length > 0) {
     talks.push({
       folder: folder,
       thumb: thumb,
