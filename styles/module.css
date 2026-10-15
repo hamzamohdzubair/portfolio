@@ -21,7 +21,7 @@ body {
 }
 
 .back-button {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
@@ -37,13 +37,13 @@ body {
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.11);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .module-container {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
@@ -52,7 +52,7 @@ body {
 }
 
 .header {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
@@ -61,7 +61,7 @@ body {
 }
 
 .module-tag {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: inline-block;
@@ -97,7 +97,7 @@ body {
 }
 
 .module-overview {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 30px;
@@ -127,7 +127,7 @@ body {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 25px;
@@ -176,7 +176,7 @@ body {
 }
 
 .detail-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 25px;
@@ -204,7 +204,7 @@ body {
 }
 
 .location-box {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 25px;
@@ -232,7 +232,7 @@ body {
 }
 
 .schedule-section {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 30px;
@@ -254,7 +254,7 @@ body {
 }
 
 .session-item {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px;
@@ -288,7 +288,7 @@ body {
 }
 
 .week-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
@@ -297,13 +297,13 @@ body {
 }
 
 .week-card:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
 }
 
 .week-number {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
@@ -342,7 +342,7 @@ body {
   font-weight: bold;
   position: absolute;
   left: 0;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -353,7 +353,7 @@ body {
 }
 
 .projects-section {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
@@ -375,7 +375,7 @@ body {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px;
@@ -396,7 +396,7 @@ body {
 }
 
 .learning-outcomes {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 30px;
@@ -415,7 +415,7 @@ body {
   align-items: start;
   gap: 12px;
   padding: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   border-radius: 10px;
   border-left: 3px solid rgba(255, 255, 255, 0.5);
 }
@@ -443,7 +443,7 @@ body {
 }
 
 .tool-badge {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 12px 24px;
@@ -457,7 +457,7 @@ body {
 }
 
 .prerequisites {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
@@ -486,7 +486,7 @@ body {
 }
 
 .sidebar-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
@@ -704,7 +704,7 @@ body {
 }
 
 .close-button {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
   border: none;
   color: white;
   font-size: 32px;
@@ -721,7 +721,7 @@ body {
 }
 
 .close-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
   transform: rotate(90deg);
 }
 

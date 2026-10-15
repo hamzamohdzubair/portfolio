@@ -8,46 +8,20 @@ body {
   padding-top: 4rem;
 }
 
-.home-button {
-  position: fixed;
-  top: 2rem;
-  left: 2rem;
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 100;
-}
-
-.home-button:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
 .page-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
 .page-title {
-  font-size: 3rem;
-  font-weight: 300;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 
 .page-subtitle {
   font-size: 1.2rem;
-  opacity: 0.9;
+  color: var(--text-muted);
   font-weight: 300;
 }
 
@@ -58,9 +32,12 @@ body {
 }
 
 .course-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 18, 35, 0.55);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  animation: fadeInUp 0.9s ease-out both;
   border-radius: 20px;
   padding: 2.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,10 +47,24 @@ body {
   position: relative;
 }
 
+.course-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899, #22d3ee);
+}
+
 .course-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+  border-color: rgba(167, 139, 250, 0.5);
+  box-shadow: 0 24px 60px -12px rgba(139, 92, 246, 0.55);
+}
+
+.course-card:nth-child(2) {
+  animation-delay: 0.12s;
 }
 
 .live-badge {
@@ -137,7 +128,7 @@ body {
 }
 
 .course-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
@@ -158,18 +149,24 @@ body {
 
 .course-meta {
   font-size: 0.85rem;
-  opacity: 0.8;
+  color: var(--text-muted);
   display: flex;
   gap: 0.5rem;
 }
 
 .coming-soon {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: default;
+}
+
+.coming-soon::before {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .coming-soon:hover {
   transform: none;
+  border-color: var(--glass-border);
+  box-shadow: none;
 }
 
 @media (max-width: 768px) {

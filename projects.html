@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Hamza Mohd Zubair</title>
+    <meta name="theme-color" content="#05060f" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="/styles/common.css" />
+    <link rel="stylesheet" href="/styles/projects.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NLV7GHEJDK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NLV7GHEJDK");
+    </script>
+  </head>
+  <body>
+    <a href="index.html" class="home-button" title="Back to Home">
+      <iconify-icon icon="material-symbols:home"></iconify-icon>
+    </a>
+
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">Things I've built and shipped</p>
+      </div>
+
+      <!-- Redeo -->
+      <article class="project">
+        <div class="project-visual redeo-visual">
+          <div class="phone">
+            <div class="phone-screen">
+              <img src="projects/redeo-icon.png" alt="Redeo app icon" class="redeo-icon" />
+              <div class="recall-q">What does FSRS schedule?</div>
+              <div class="recall-a">
+                <span></span><span></span><span class="short"></span>
+              </div>
+              <div class="recall-score">
+                <span>Recall</span><b>94%</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <div class="project-kicker">
+            <iconify-icon icon="mdi:android"></iconify-icon> Android app
+          </div>
+          <h2 class="project-name">Redeo</h2>
+          <p class="project-tagline">Remember forever.</p>
+          <p class="project-desc">
+            A spaced-repetition flashcard app where you don't grade yourself.
+            You write the answer from memory, an on-device model scores how
+            well you recalled it, and FSRS schedules the next review. Nothing
+            is sent to a server for grading.
+          </p>
+          <div class="project-tags">
+            <span>Kotlin</span><span>On-device ML</span><span>FSRS</span
+            ><span>Room</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://play.google.com/store/apps/details?id=app.redeo"
+              class="btn btn-primary"
+            >
+              <iconify-icon icon="mdi:google-play"></iconify-icon> Get it on
+              Google Play
+            </a>
+            <a
+              href="https://hamzamohdzubair.github.io/redeo-site/"
+              class="btn btn-glass"
+            >
+              Website <iconify-icon icon="ph:arrow-up-right"></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- dontwatch.in -->
+      <article class="project reverse">
+        <div class="project-visual dw-visual">
+          <div class="browser">
+            <div class="browser-bar">
+              <i></i><i></i><i></i>
+              <span class="url">
+                <iconify-icon icon="ph:lock-simple-fill"></iconify-icon>
+                dontwatch.in
+              </span>
+            </div>
+            <div class="browser-body">
+              <div class="dw-mark">
+                <iconify-icon icon="ph:eye-slash-duotone"></iconify-icon>
+              </div>
+              <div class="dw-word">dont<span>watch</span>.in</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <div class="project-kicker">
+            <iconify-icon icon="ph:globe-simple"></iconify-icon> Web app
+          </div>
+          <h2 class="project-name">dontwatch.in</h2>
+          <p class="project-tagline">Learn a course without watching all of it.</p>
+          <p class="project-desc">
+            Learn a university lecture series by answering questions instead of
+            watching every hour of it. Each question links to the minute of the
+            lecture where the answer is, and AI grades your answer against what
+            the lecturer actually said. A course map tracks your progress.
+          </p>
+          <div class="project-tags">
+            <span>Cloudflare Workers</span><span>AI grading</span
+            ><span>YouTube lectures</span>
+          </div>
+          <div class="project-links">
+            <a href="https://dontwatch.in" class="btn btn-primary">
+              Visit dontwatch.in
+              <iconify-icon icon="ph:arrow-up-right-bold"></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

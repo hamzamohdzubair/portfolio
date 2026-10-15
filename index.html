@@ -7,6 +7,11 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
     />
     <title>Hamza Mohd Zubair - Portfolio</title>
+    <meta
+      name="description"
+      content="Hamza Mohd Zubair: educator, engineer and speaker on AI."
+    />
+    <meta name="theme-color" content="#05060f" />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="styles/common.css" />
     <link rel="stylesheet" href="styles/index.css" />
@@ -25,125 +30,110 @@
       gtag("config", "G-NLV7GHEJDK");
     </script>
   </head>
-  <body class="variant-3">
-    <div class="stars-container">
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-    </div>
+  <body>
+    <!-- Cursor-following glow -->
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-    <div class="container">
-      <!-- Profile Photo -->
-      <div class="profile-photo"></div>
-
-      <!-- Name -->
-      <h1 class="name">Hamza Mohd Zubair</h1>
-
-      <!-- Bio -->
-      <p class="bio">
-        I love simplifying complex topics, building scalable systems and
-        applying formal sciences to solve problems in social sciences.
-      </p>
-
-      <div class="quick-links">
-        <a href="courses/index.html" class="quick-link-btn">Courses</a>
-        <a href="talks.html" class="quick-link-btn secondary">Talks</a>
-        <a href="https://slides.hzubair.com" class="quick-link-btn secondary"
-          >Slides</a
-        >
+    <nav class="topbar">
+      <a href="index.html" class="logo">hamza<span>.zubair</span></a>
+      <div class="nav-pill">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="talks.html">Talks</a>
+        <a href="https://slides.hzubair.com">Slides</a>
       </div>
+    </nav>
 
-      <!-- Social Links -->
-      <div class="social-links">
-        <a
-          href="https://www.youtube.com/@hamzubair"
-          class="social-link"
-          title="Youtube"
-        >
-          <iconify-icon icon="iconoir:youtube-solid"></iconify-icon>
+    <main class="hero">
+      <section class="hero-text">
+        <a href="https://play.google.com/store/apps/details?id=app.redeo" class="announce">
+          <span class="dot"></span> New · Redeo is live on Google Play
+          <iconify-icon icon="ph:arrow-right"></iconify-icon>
         </a>
-        <a
-          href="https://linkedin.com/in/hamzamohdzubair"
-          class="social-link"
-          title="LinkedIn"
-        >
-          <iconify-icon
-            icon="entypo-social:linkedin-with-circle"
-          ></iconify-icon>
+
+        <h1 class="name">
+          Hamza<br /><span class="gradient-text">Mohd Zubair</span>
+        </h1>
+
+        <p class="bio">
+          I love simplifying complex topics, building scalable systems and
+          applying formal sciences to solve problems in social sciences.
+        </p>
+
+        <div class="cta">
+          <a href="projects.html" class="btn btn-primary">
+            See Projects <iconify-icon icon="ph:arrow-right-bold"></iconify-icon>
+          </a>
+          <a href="talks.html" class="btn btn-glass">
+            <iconify-icon icon="ph:microphone-stage"></iconify-icon> Talks
+          </a>
+          <a href="https://slides.hzubair.com" class="btn btn-glass">
+            <iconify-icon icon="ph:presentation-chart"></iconify-icon> Slides
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.youtube.com/@hamzubair" class="social-link" title="YouTube">
+            <iconify-icon icon="iconoir:youtube-solid"></iconify-icon>
+          </a>
+          <a href="https://linkedin.com/in/hamzamohdzubair" class="social-link" title="LinkedIn">
+            <iconify-icon icon="mdi:linkedin"></iconify-icon>
+          </a>
+          <a href="https://github.com/hamzamohdzubair" class="social-link" title="GitHub">
+            <iconify-icon icon="carbon:logo-github"></iconify-icon>
+          </a>
+          <a href="mailto:hamzamohdzubair@gmail.com" class="social-link" title="Email">
+            <iconify-icon icon="ph:envelope-simple"></iconify-icon>
+          </a>
+        </div>
+      </section>
+
+      <section class="hero-visual">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="photo-wrap">
+          <div class="profile-photo"></div>
+        </div>
+
+        <a href="talks.html" class="float-card card-talks">
+          <b>6+</b><small>Talks across India</small>
         </a>
-        <a
-          href="https://github.com/hamzamohdzubair"
-          class="social-link"
-          title="GitHub"
-        >
-          <iconify-icon icon="carbon:logo-github"></iconify-icon>
+        <div class="float-card card-since">
+          <b>2017 →</b><small>Speaking on AI</small>
+        </div>
+        <a href="https://youtu.be/ZYR3sfpftJI" class="float-card card-latest">
+          <span class="spark"><iconify-icon icon="ph:sparkle-fill"></iconify-icon></span>
+          <span>
+            <span class="latest-label">Latest talk</span>
+            <small>State of AI: Facts vs Hype</small>
+          </span>
         </a>
-        <a
-          href="mailto:hamzamohdzubair@gmail.com"
-          class="social-link"
-          title="Email"
-        >
-          <iconify-icon
-            icon="streamline-ultimate:read-email-at-1-bold"
-          ></iconify-icon>
-        </a>
-        <!-- <a -->
-        <!--   href="https://slides.hzubair.com" -->
-        <!--   target="_blank" -->
-        <!--   class="social-link" -->
-        <!--   title="Slides" -->
-        <!-- > -->
-        <!--   <i class="hgi hgi-stroke hgi-presentation-bar-chart-01"></i> -->
-        <!-- </a> -->
-      </div>
-    </div>
+      </section>
+    </main>
 
     <script>
-      // Add some interactive magic - with touch support
+      // Photo leans towards the pointer; the glow follows it
+      const visual = document.querySelector(".photo-wrap");
+      const glow = document.querySelector(".cursor-glow");
+
       function handleMove(clientX, clientY) {
-        const photo = document.querySelector(".profile-photo");
-        if (!photo) return;
+        glow.style.transform = `translate(${clientX}px, ${clientY}px)`;
+        glow.style.opacity = 1;
 
-        const rect = photo.getBoundingClientRect();
-        const x = clientX - rect.left - rect.width / 2;
-        const y = clientY - rect.top - rect.height / 2;
-
-        const distance = Math.sqrt(x * x + y * y);
-        if (distance < 150) {
-          const angle = Math.atan2(y, x);
-          const moveX = Math.cos(angle) * 5;
-          const moveY = Math.sin(angle) * 5;
-          photo.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        } else {
-          photo.style.transform = "translate(0, 0)";
-        }
+        const rect = visual.getBoundingClientRect();
+        const x = (clientX - rect.left - rect.width / 2) / window.innerWidth;
+        const y = (clientY - rect.top - rect.height / 2) / window.innerHeight;
+        visual.style.transform = `translate(-50%, -50%) rotateY(${x * 14}deg) rotateX(${-y * 14}deg)`;
       }
 
-      // Mouse support
       document.addEventListener("mousemove", (e) => {
         handleMove(e.clientX, e.clientY);
       });
 
-      // Touch support
-      document.addEventListener("touchmove", (e) => {
-        if (e.touches.length > 0) {
-          handleMove(e.touches[0].clientX, e.touches[0].clientY);
-        }
-      });
-
-      // Reset on touch end
-      document.addEventListener("touchend", () => {
-        const photo = document.querySelector(".profile-photo");
-        if (photo) {
-          photo.style.transform = "translate(0, 0)";
-        }
+      document.addEventListener("mouseleave", () => {
+        glow.style.opacity = 0;
+        visual.style.transform = "translate(-50%, -50%)";
       });
     </script>
-
   </body>
 </html>
