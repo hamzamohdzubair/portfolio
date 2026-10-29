@@ -6,12 +6,26 @@
     <title>Resume - Hamza Mohd Zubair</title>
     <meta
       name="description"
-      content="Resume of Hamza Mohd Zubair: data scientist with 8+ years shipping ML in retail, BFSI and QSR."
+      content="Resume of Hamza Mohd Zubair: data scientist with 9+ years shipping ML in production."
     />
     <meta name="theme-color" content="#05060f" />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="/styles/common.css" />
     <link rel="stylesheet" href="/styles/resume.css" />
+    <script>
+      // ?short shows the one-page version: elements marked .full are hidden
+      const isShort = new URLSearchParams(location.search).has("short");
+      document.documentElement.classList.toggle("short", isShort);
+      document.addEventListener("DOMContentLoaded", () => {
+        const version = isShort ? "short" : "full";
+        document
+          .querySelector(`.version [data-version="${version}"]`)
+          .classList.add("active");
+        document.getElementById("pdf-link").href = isShort
+          ? "resume-short.pdf"
+          : "resume.pdf";
+      });
+    </script>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -33,7 +47,11 @@
     </a>
 
     <div class="toolbar">
-      <a href="resume.pdf" class="btn btn-glass" download>
+      <nav class="version" aria-label="Resume version">
+        <a href="resume.html" data-version="full">Full</a>
+        <a href="resume.html?short" data-version="short">One page</a>
+      </nav>
+      <a href="resume.pdf" class="btn btn-glass" id="pdf-link" download>
         <iconify-icon icon="ph:file-pdf"></iconify-icon> Download PDF
       </a>
       <button class="btn btn-primary" onclick="window.print()">
@@ -73,11 +91,12 @@
       </header>
 
       <p class="summary">
-        Data scientist with <b>8+ years</b> of deploying ML in production across
-        <b>retail</b>, <b>BFSI</b> and <b>QSR</b>. Productized supervised
-        learning, reinforcement learning, deep learning, NLP, computer vision,
-        Markov models, time-series forecasting and <b>LLM</b> pipelines. Now
-        building independent AI products and speaking on AI.
+        Data scientist with <b>9+ years</b> of deploying ML in production across
+        <b>consumer healthcare</b>, <b>retail</b>, <b>BFSI</b> and <b>QSR</b>.
+        Productized demand forecasting, supervised learning, reinforcement
+        learning, deep learning, NLP, computer vision, Markov models and
+        <b>LLM</b> pipelines.<span class="full"> Also builds independent AI
+        products and speaks on AI.</span>
       </p>
 
       <section>
@@ -85,33 +104,69 @@
 
         <article class="item">
           <div class="item-head">
-            <h3>Data Science &amp; AI Consultant <span>· XCCELER (freelance)</span></h3>
-            <time>Apr 2025 – Present</time>
+            <h3>Senior Data Scientist <span>· EPAM Systems</span></h3>
+            <time>Jan 2026 – Present</time>
           </div>
+          <p class="context">
+            Client: <b>Opella</b> (Sanofi Consumer Healthcare), since Apr 2026.
+            Weekly e-commerce sell-out forecasting for Amazon and other
+            retailers in 8+ markets<span class="full">, on Snowflake, SageMaker
+            Pipelines and MLflow with Chronos-2, Prophet, MFLES and Ridge
+            models</span>.
+          </p>
           <ul>
             <li>
-              Consults on marketing and CRM data: predictive models and
-              segmentation that find the customers most likely to buy, cutting
-              clients' ad spend through more targeted campaigns.
+              <b>Product discontinuation lifecycle</b> in the production
+              forecaster: phased-out products fade to zero, are capped by
+              retailer stock and hand volume over to their successor.
             </li>
             <li>
-              Advises multiple clients on using customer analytics to raise the
-              ROI of their marketing campaigns.
+              <b>Model vs. covariate study</b> over 27 rolling backtest origins:
+              showed model choice is worth 6–9 WAPE points while external data
+              adds under 1, and ensembling gains about 2.
+            </li>
+            <li>
+              <b>Plackett-Burman factorial screen</b> of feature groups in 16
+              parallel SageMaker runs, replacing one-feature-at-a-time testing;
+              cut screening time by <b>63%</b> (246 → 91 min) and SHAP cost by
+              about 60%.
+            </li>
+            <li class="full">
+              Redesigned <b>cannibalization detection</b> to remove false
+              positives from zero-inflated sales; found by reproducing runs that
+              production had silently switched to the wrong Chronos checkpoint.
+            </li>
+            <li class="full">
+              Audited the 9 forecast-exclusion rules (12.7% of recent volume
+              excluded, several rules dead) and proposed a three-tier redesign;
+              ranked cross-market data-quality issues by revenue impact.
+            </li>
+            <li class="full">
+              Self-initiated internal tools: <b>nx</b>, a Snowflake
+              data-access and run-reproduction library used in 40+ notebooks;
+              <b>benchpress</b>, a FastAPI app for benchmarking forecast runs;
+              and <b>ops</b>, a Rust CLI tying Jira, GitHub and SageMaker test
+              runs together.
             </li>
           </ul>
         </article>
 
         <article class="item">
           <div class="item-head">
-            <h3>Data Scientist <span>· Turing.com</span></h3>
+            <h3>Senior Data Scientist <span>· Turing.com</span></h3>
             <time>Aug 2024 – Apr 2025</time>
           </div>
           <ul>
-            <li>Part of the team training <b>Gemini</b> with supervised fine-tuning (SFT).</li>
+            <li class="full">Part of the team training <b>Gemini</b> with supervised fine-tuning (SFT).</li>
             <li>
               <b>Complex chart production tool</b> (sole designer and developer):
-              an LLM pipeline that cut chart generation time by <b>93%</b>, from
-              45 min to 3 min, at about ₹0.4 per chart.
+              LLM agent pipelines that cut chart generation time by <b>93%</b>,
+              from 45 min to 3 min, at about ₹0.4 per chart.
+            </li>
+            <li class="full">
+              Built <b>RAG</b> with optimized inference and caching, and
+              production agentic workflows in <b>LangChain</b> and <b>DSPy</b>
+              with observability and evaluation built in.
             </li>
           </ul>
         </article>
@@ -126,20 +181,20 @@
               <b>Campaign prioritizer</b> (solo): contextual multi-armed bandits
               with Thompson sampling and UCB, deployed for 2 major clients
               (pharma retail, brokerage) to send each customer the right
-              campaign, improving click-through rates and revenue.
+              campaign, lifting click-through and revenue.
             </li>
             <li>
-              <b>Automated MLOps platform</b> (team of 2): lets users configure,
-              deploy and maintain XGBoost / LightGBM models with automatic
-              feature engineering, tuning, calibration, retraining, scoring and
-              feature importance. Used by nearly all Solus clients.
+              <b>Automated MLOps platform</b> (team of 2): configure, deploy and
+              maintain XGBoost / LightGBM models with automated feature
+              engineering, tuning, calibration and retraining. Used by nearly all
+              Solus clients.
             </li>
-            <li>
+            <li class="full">
               <b>SMS composer</b> (solo): generative NLP module and UI that
               breaks a message down by purpose, tone and personalization fields
               and writes multiple variants from a prompt.
             </li>
-            <li>
+            <li class="full">
               <b>Multi-touch attribution</b> (solo): adapted Markov-model
               attribution from digital marketing to CRM and direct marketing.
             </li>
@@ -149,7 +204,7 @@
               controlled LSTM that writes subject lines. Deployed for a major
               Indian bank.
             </li>
-            <li>
+            <li class="full">
               <b>Product segmentation</b> (solo): LDA topic modelling that
               automated product categorization for targeted marketing.
             </li>
@@ -162,12 +217,12 @@
             <time>Jan 2017 – Aug 2018</time>
           </div>
           <ul>
-            <li>
+            <li class="full">
               Bootstrapped startup building an Alexa-like desktop robot with
               voice commands, vision, face tracking and an animated emotive
               display.
             </li>
-            <li>
+            <li class="full">
               Led a team of 5 building speech intent classification (SVM, random
               forests), novelty detection (one-class SVM), information
               extraction (grammar and dependency parsing, SyntaxNet) and live
@@ -177,7 +232,7 @@
         </article>
       </section>
 
-      <section>
+      <section class="full">
         <h2>Products</h2>
         <article class="item">
           <div class="item-head">
@@ -203,68 +258,52 @@
         </article>
       </section>
 
-      <section class="split">
-        <div>
-          <h2>Education</h2>
-          <article class="item compact">
-            <div class="item-head">
-              <h3>MS, Computer Science (ML/AI)</h3>
-              <time>2023 – 2025</time>
-            </div>
-            <p>Woolf University</p>
-          </article>
-          <article class="item compact">
-            <div class="item-head">
-              <h3>Certification, Reinforcement Learning</h3>
-              <time>2019 – 2020</time>
-            </div>
-            <p>IISc Bangalore</p>
-          </article>
-          <article class="item compact">
-            <div class="item-head">
-              <h3>MSc, Cognitive Science</h3>
-              <time>2013 – 2015</time>
-            </div>
-            <p>IIT Gandhinagar</p>
-          </article>
-          <article class="item compact">
-            <div class="item-head">
-              <h3>BTech, Bioinformatics</h3>
-              <time>2009 – 2013</time>
-            </div>
-            <p>VIT Vellore</p>
-          </article>
-        </div>
-
-        <div>
-          <h2>Skills</h2>
-          <dl class="skills">
-            <dt>Languages</dt>
-            <dd>Python, Rust, Kotlin, SQL, R</dd>
-            <dt>ML</dt>
-            <dd>PyTorch, TensorFlow, Keras, XGBoost, LightGBM, Vowpal Wabbit</dd>
-            <dt>Data</dt>
-            <dd>NumPy, pandas, SciPy</dd>
-            <dt>Areas</dt>
-            <dd>LLMs, NLP, bandits &amp; RL, computer vision, forecasting, attribution</dd>
-          </dl>
-
-          <h2>Recognition</h2>
-          <ul class="plain">
-            <li>Employee of the Quarter, Cartesian (Q1 2020)</li>
-            <li>Innovation Award for NLP work, Cartesian (2020)</li>
-          </ul>
-        </div>
+      <section>
+        <h2>Education</h2>
+        <ul class="rows">
+          <li><span><b>MS, Computer Science (ML/AI)</b> · Woolf University</span><time>2023 – 2025</time></li>
+          <li><span><b>Certification, Reinforcement Learning</b> · IISc Bangalore</span><time>2019 – 2020</time></li>
+          <li><span><b>MSc, Cognitive Science</b> · IIT Gandhinagar</span><time>2013 – 2015</time></li>
+          <li><span><b>BTech, Bioinformatics</b> · VIT Vellore</span><time>2009 – 2013</time></li>
+        </ul>
       </section>
 
       <section>
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Languages</dt>
+          <dd>Python, Rust, Kotlin, SQL, R</dd>
+          <dt>ML</dt>
+          <dd>PyTorch, TensorFlow, Keras, scikit-learn, XGBoost, LightGBM, SHAP, Vowpal Wabbit</dd>
+          <dt>Forecasting</dt>
+          <dd>Chronos-2, Prophet, MFLES, rolling backtests, factorial experiments</dd>
+          <dt>Data &amp; MLOps</dt>
+          <dd>pandas, NumPy, SciPy, Snowflake, AWS SageMaker, MLflow, FastAPI, GitHub Actions</dd>
+          <dt>LLM</dt>
+          <dd>LangChain, DSPy, RAG pipelines</dd>
+          <dt class="full">Areas</dt>
+          <dd class="full">LLMs, agentic AI, NLP, bandits &amp; RL, computer vision, forecasting, attribution</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Awards</h2>
+        <ul class="rows">
+          <li><span><b>Employee of the Quarter</b> · Cartesian Consulting</span><time>Q1 2020</time></li>
+          <li><span><b>Innovation Award</b>, for work in NLP · Cartesian Consulting</span><time>2020</time></li>
+          <li class="full"><span><b>Merit-Based Scholarship</b> · IIT Gandhinagar</span><time>2013 – 2015</time></li>
+          <li class="full"><span><b>Research Fellowship</b> (€1,000) · ISCTE-IUL, Lisbon</span><time>May – Jul 2014</time></li>
+        </ul>
+      </section>
+
+      <section class="full">
         <h2>Talks</h2>
-        <ul class="talks">
+        <ul class="rows">
           <li><span><b>State of AI: Facts vs Hype</b> · MINE</span><time>Nov 2025</time></li>
           <li><span><b>AI: Between Myth, Mind and Morality</b> · BIFT, Bangalore</span><time>Nov 2025</time></li>
           <li><span><b>AI 101</b> · The Success Institute, Bangalore</span><time>Oct 2025</time></li>
           <li><span><b>Sustainable AI</b> · St. Claret College, Bangalore</span><time>Oct 2025</time></li>
-          <li><span><b>HackerTech</b> · VIT University, Vellore</span><time>Dec 2019</time></li>
+          <li><span><b>HackerTech hackathon</b>, judge &amp; panelist · VIT University, Vellore</span><time>Dec 2019</time></li>
           <li><span><b>AI for Startups</b> · Nexus, US Embassy, New Delhi</span><time>Aug 2017</time></li>
         </ul>
       </section>

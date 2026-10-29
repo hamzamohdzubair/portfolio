@@ -13,6 +13,33 @@ body {
   gap: 10px;
 }
 
+.version {
+  display: inline-flex;
+  margin-right: auto;
+  padding: 4px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.version a {
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.version a:hover {
+  color: var(--white);
+}
+
+.version a.active {
+  background: rgba(139, 92, 246, 0.35);
+  color: var(--white);
+}
+
 .btn {
   padding: 11px 18px;
   border-radius: 14px;
@@ -42,6 +69,11 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
+}
+
+/* One-page version: hide the detail only the full resume carries */
+.short .full {
+  display: none !important;
 }
 
 /* ============================================
@@ -152,15 +184,16 @@ body {
 
 .item {
   margin-bottom: 1.1rem;
+}
+
+.item-head,
+.item li,
+.rows li {
   break-inside: avoid;
 }
 
-.item.compact {
-  margin-bottom: 0.7rem;
-}
-
-.item.compact h3 {
-  font-size: 0.95rem;
+.item-head {
+  break-after: avoid;
 }
 
 .item-head {
@@ -184,7 +217,7 @@ body {
 
 .item-head time,
 .item-head a,
-.talks time {
+.rows time {
   flex: none;
   font-size: 13px;
   color: var(--muted);
@@ -195,33 +228,20 @@ body {
   color: var(--muted);
 }
 
-.item ul,
-.plain {
+.item .context {
+  margin-top: 0.2rem;
+}
+
+.item ul {
   margin: 0.35rem 0 0 1.1rem;
 }
 
-.item li,
-.plain li {
+.item li {
   margin-bottom: 0.3rem;
 }
 
-.item li::marker,
-.plain li::marker {
+.item li::marker {
   color: var(--violet);
-}
-
-.split {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 2.5rem;
-}
-
-.split h2 + * {
-  margin-top: 0;
-}
-
-.split .plain {
-  margin-left: 1.1rem;
 }
 
 .skills {
@@ -236,14 +256,13 @@ body {
   color: var(--white);
 }
 
-.talks {
+.rows {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.45rem 2.5rem;
+  gap: 0.45rem;
 }
 
-.talks li {
+.rows li {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -253,8 +272,13 @@ body {
 
 @media (max-width: 720px) {
   .toolbar {
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 4.5rem;
+  }
+
+  .version {
+    margin-right: 0;
   }
 
   .resume {
@@ -276,16 +300,6 @@ body {
     flex-direction: column;
     gap: 0;
   }
-
-  .split,
-  .talks {
-    grid-template-columns: 1fr;
-  }
-
-  .split {
-    gap: 0;
-  }
-
 }
 
 /* ============================================
@@ -294,7 +308,7 @@ body {
 @media print {
   @page {
     size: A4;
-    margin: 14mm 15mm;
+    margin: 12mm 15mm;
   }
 
   html,
@@ -324,8 +338,8 @@ body {
     box-shadow: none;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    font-size: 10pt;
-    line-height: 1.45;
+    font-size: 9.5pt;
+    line-height: 1.4;
   }
 
   .resume b,
@@ -366,16 +380,47 @@ body {
     margin-bottom: 0.75rem;
   }
 
-  .item.compact {
-    margin-bottom: 0.45rem;
-  }
-
-  .item li,
-  .plain li {
+  .item li {
     margin-bottom: 0.15rem;
   }
 
   .skills {
     margin-bottom: 1.1rem;
+  }
+
+  /* One-page version: a little denser so it fits a single sheet */
+  .short .resume {
+    font-size: 9pt;
+    line-height: 1.38;
+  }
+
+  .short .photo {
+    width: 68px;
+    height: 68px;
+  }
+
+  .short .name {
+    font-size: 21pt;
+  }
+
+  .short .resume section {
+    margin-top: 0.85rem;
+  }
+
+  .short .item {
+    margin-bottom: 0.55rem;
+  }
+
+  .short .item li {
+    margin-bottom: 0.1rem;
+  }
+
+  .short .rows {
+    gap: 0.15rem;
+  }
+
+  .short .skills {
+    gap: 0.15rem 1rem;
+    margin-bottom: 0;
   }
 }
