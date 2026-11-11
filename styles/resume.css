@@ -299,7 +299,7 @@ html:not(.short) .short-only {
   border-left: 2px solid var(--line);
 }
 
-.logo {
+.co-logo {
   position: absolute;
   z-index: 1;
   left: calc(var(--axis) - var(--logo) / 2);
@@ -312,19 +312,19 @@ html:not(.short) .short-only {
   box-shadow: 0 0 0 1px var(--logo-ring);
 }
 
-.logo img {
+.co-logo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.logo.pad img {
+.co-logo.pad img {
   object-fit: contain;
   padding: 8%;
 }
 
-.co.current .logo {
+.co.current .co-logo {
   box-shadow:
     0 0 0 1px var(--logo-ring),
     0 0 0 0.3em var(--glow);
