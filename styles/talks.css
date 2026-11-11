@@ -1,13 +1,13 @@
 body {
-  padding: 2rem 1rem;
+  padding-bottom: 2rem;
   overflow-y: auto;
 }
 
-/* Container */
+/* Container. Side gutters sit on the content, not on body, so the top bar lines up with the home page */
 .container {
-  max-width: 1200px;
+  width: min(1200px, 100% - 2rem);
   margin: 0 auto;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 /* Header */
@@ -217,15 +217,8 @@ body {
     gap: 1.5rem;
   }
 
-  .home-button {
-    top: 1rem;
-    left: 1rem;
-    width: 45px;
-    height: 45px;
-  }
-
   .container {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
   }
 }
 

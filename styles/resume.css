@@ -1,13 +1,14 @@
 body {
-  padding: 2rem 1rem;
+  padding-bottom: 2rem;
 }
 
 /* ============================================
    TOOLBAR: download / print (screen only)
    ============================================ */
+/* Side gutters sit on the content, not on body, so the top bar lines up with the home page */
 .toolbar {
-  max-width: 860px;
-  margin: 2.5rem auto 1.25rem;
+  width: min(860px, 100% - 2rem);
+  margin: 1rem auto 1.25rem;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -90,7 +91,7 @@ html:not(.short) .short-only {
   --accent: #c4b5fd;
   --rule: rgba(255, 255, 255, 0.12);
 
-  max-width: 860px;
+  width: min(860px, 100% - 2rem);
   margin: 0 auto;
   padding: 3rem;
   border-radius: 28px;
@@ -279,7 +280,6 @@ html:not(.short) .short-only {
   .toolbar {
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 4.5rem;
   }
 
   .version {
@@ -324,7 +324,7 @@ html:not(.short) .short-only {
 
   body::before,
   body::after,
-  .home-button,
+  .topbar,
   .toolbar {
     display: none !important;
   }
@@ -335,7 +335,7 @@ html:not(.short) .short-only {
     --accent: #6d28d9;
     --rule: #e2e8f0;
 
-    max-width: none;
+    width: auto;
     padding: 0;
     border: 0;
     border-radius: 0;
