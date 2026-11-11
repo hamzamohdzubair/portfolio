@@ -76,6 +76,11 @@ body {
   display: none !important;
 }
 
+/* ...and the full version hides what only the one-page resume carries */
+html:not(.short) .short-only {
+  display: none !important;
+}
+
 /* ============================================
    RESUME SHEET
    ============================================ */
@@ -385,7 +390,12 @@ body {
   }
 
   .skills {
+    gap: 0.25rem 1rem;
     margin-bottom: 1.1rem;
+  }
+
+  .rows {
+    gap: 0.3rem;
   }
 
   /* One-page version: a little denser so it fits a single sheet */
