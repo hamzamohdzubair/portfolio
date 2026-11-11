@@ -20,63 +20,9 @@ body {
   transition: opacity 0.4s;
 }
 
-/* ============================================
-   TOP BAR
-   ============================================ */
+/* The top bar itself lives in common.css; only the home page fades it in */
 .topbar {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 64px;
   animation: fadeInUp 0.8s ease-out;
-}
-
-.logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: -0.5px;
-  color: var(--white);
-  text-decoration: none;
-}
-
-.logo span {
-  background: linear-gradient(90deg, #a78bfa, #22d3ee);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.nav-pill {
-  display: flex;
-  gap: 4px;
-  padding: 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: var(--blur-amount);
-  -webkit-backdrop-filter: var(--blur-amount);
-}
-
-.nav-pill a {
-  color: #cbd5e1;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  transition: var(--transition-smooth);
-}
-
-.nav-pill a:hover {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.nav-pill a.active {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--white);
 }
 
 /* ============================================
@@ -415,10 +361,6 @@ a.float-card:hover {
    RESPONSIVE
    ============================================ */
 @media (max-width: 960px) {
-  .topbar {
-    padding: 20px 24px;
-  }
-
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -479,16 +421,6 @@ a.float-card:hover {
 }
 
 @media (max-width: 600px) {
-  .topbar {
-    flex-direction: column;
-    gap: 14px;
-    padding: 18px 16px 4px;
-  }
-
-  .nav-pill a {
-    padding: 8px 14px;
-  }
-
   .hero {
     padding: 0 16px 40px;
   }

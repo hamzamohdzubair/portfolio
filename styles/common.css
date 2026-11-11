@@ -121,6 +121,64 @@ body::after {
 }
 
 /* ============================================
+   TOP BAR - site nav at the top of every page
+   ============================================ */
+.topbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 64px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.logo span {
+  background: linear-gradient(90deg, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-pill {
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--blur-amount);
+  -webkit-backdrop-filter: var(--blur-amount);
+}
+
+.nav-pill a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: var(--transition-smooth);
+}
+
+.nav-pill a:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-pill a.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+}
+
+/* ============================================
    REUSABLE COMPONENTS
    ============================================ */
 
@@ -231,6 +289,31 @@ body::after {
 /* ============================================
    RESPONSIVE - Mobile adjustments
    ============================================ */
+@media (max-width: 960px) {
+  .topbar {
+    padding: 20px 24px;
+  }
+}
+
+/* Phones: logo above the links, and the links narrow enough to fit a 360px screen */
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 16px 4px;
+  }
+
+  .nav-pill {
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .nav-pill a {
+    font-size: 13px;
+    padding: 8px 11px;
+  }
+}
+
 @media (max-width: 768px) {
   .home-button {
     top: var(--spacing-sm);
