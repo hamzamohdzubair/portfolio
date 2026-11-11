@@ -53,20 +53,22 @@
       </div>
     </nav>
 
-    <div class="toolbar">
-      <nav class="version" aria-label="Resume version">
-        <a href="resume.html" data-version="full">Full</a>
-        <a href="resume.html?short" data-version="short">One page</a>
-      </nav>
-      <a href="resume.pdf" class="btn btn-glass" id="pdf-link" download>
-        <iconify-icon icon="ph:file-pdf"></iconify-icon> Download PDF
-      </a>
-      <button class="btn btn-primary" onclick="window.print()">
-        <iconify-icon icon="ph:printer"></iconify-icon> Print
-      </button>
-    </div>
-
     <main class="resume">
+      <div class="doc-bar">
+        <nav class="version" aria-label="Resume version">
+          <a href="resume.html" data-version="full">Full</a>
+          <a href="resume.html?short" data-version="short">One page</a>
+        </nav>
+        <div class="doc-actions">
+          <a href="resume.pdf" class="ghost" id="pdf-link" aria-label="Download PDF" title="Download PDF" download>
+            <iconify-icon icon="ph:download-simple"></iconify-icon><span>PDF</span>
+          </a>
+          <button class="ghost" aria-label="Print" title="Print" onclick="window.print()">
+            <iconify-icon icon="ph:printer"></iconify-icon><span>Print</span>
+          </button>
+        </div>
+      </div>
+
       <header class="head">
         <img src="pic.png" alt="Hamza Mohd Zubair" class="photo" />
         <div>
