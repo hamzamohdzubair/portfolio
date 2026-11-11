@@ -249,6 +249,202 @@ html:not(.short) .short-only {
   color: var(--violet);
 }
 
+/* ============================================
+   EXPERIENCE TIMELINE (full version)
+   Company start years in a left margin, company logos on one line, and
+   each company's positions on their own indented line, joined to their
+   titles by curved connectors.
+   ============================================ */
+@property --year-w {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --logo {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --gutter {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --indent {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+.timeline {
+  --year-w: 2.3em; /* width of the year margin */
+  --logo: 1.7em; /* logo size */
+  --gutter: 4.9em; /* where company names start */
+  --indent: 1.3em; /* how far positions sit in from the company name */
+  --axis: calc(var(--year-w) + 0.4em + var(--logo) / 2); /* company line */
+  --branch: 0.4em; /* position line, measured from the company name */
+  --line: rgba(167, 139, 250, 0.45);
+  --tag-bg: rgba(139, 92, 246, 0.22);
+  --tag-ink: #ddd6fe;
+  --glow: rgba(139, 92, 246, 0.35);
+  --logo-ring: rgba(255, 255, 255, 0.18);
+}
+
+.co {
+  position: relative;
+  padding: 0 0 1.1em var(--gutter);
+}
+
+/* company line: from this logo down to the next one */
+.co:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--axis) - 1px);
+  top: 1.6em;
+  bottom: 0;
+  border-left: 2px solid var(--line);
+}
+
+.logo {
+  position: absolute;
+  z-index: 1;
+  left: calc(var(--axis) - var(--logo) / 2);
+  top: -0.2em;
+  width: var(--logo);
+  height: var(--logo);
+  border-radius: 0.5em;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--logo-ring);
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo.pad img {
+  object-fit: contain;
+  padding: 8%;
+}
+
+.co.current .logo {
+  box-shadow:
+    0 0 0 1px var(--logo-ring),
+    0 0 0 0.3em var(--glow);
+}
+
+.co-head,
+.pos-head {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+.yr {
+  position: absolute;
+  left: calc(-1 * var(--gutter));
+  top: 0;
+  bottom: 0;
+  width: var(--year-w);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font: 600 0.86em var(--font-display);
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.co h3 {
+  font-size: 1.06rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.co-meta,
+.pos-head time {
+  flex: none;
+  font-size: 13px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0 0.6em;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.pos {
+  position: relative;
+  padding: 0 0 0.45em var(--indent);
+}
+
+.co-head + .pos {
+  margin-top: 0.3em;
+}
+
+.pos h4 {
+  font: 600 1.04em var(--font-display);
+  color: var(--ink);
+}
+
+/* position line: a curved connector into each title... */
+.pos::before {
+  content: "";
+  position: absolute;
+  left: var(--branch);
+  top: -0.45em;
+  width: calc(var(--indent) - var(--branch) - 0.35em);
+  height: calc(0.45em + 0.5lh);
+  border-left: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+  border-bottom-left-radius: 0.7em;
+}
+
+/* ...and a straight run down past this position to the next one */
+.pos:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: var(--branch);
+  top: calc(0.5lh - 0.2em);
+  bottom: -0.45em;
+  border-left: 2px solid var(--line);
+}
+
+.pos .context {
+  margin-top: 0.2rem;
+  color: var(--muted);
+}
+
+.pos ul {
+  margin: 0.3rem 0 0 0.95rem;
+}
+
+.pos li {
+  margin-bottom: 0.3rem;
+  break-inside: avoid;
+}
+
+.pos li::marker {
+  color: var(--violet);
+}
+
 .skills {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -301,9 +497,29 @@ html:not(.short) .short-only {
     font-size: 1.9rem;
   }
 
-  .item-head {
+  .item-head,
+  .co-head,
+  .pos-head {
     flex-direction: column;
+    align-items: flex-start;
     gap: 0;
+  }
+
+  /* phones: no year margin, logos at the left edge */
+  .timeline {
+    --year-w: 0px;
+    --logo: 1.7em;
+    --gutter: 2.6em;
+    --indent: 1.4em;
+    --axis: calc(var(--logo) / 2);
+  }
+
+  .timeline .yr {
+    display: none;
+  }
+
+  .tag {
+    margin-left: 0;
   }
 }
 
@@ -343,8 +559,8 @@ html:not(.short) .short-only {
     box-shadow: none;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    font-size: 9.5pt;
-    line-height: 1.4;
+    font-size: 9.2pt;
+    line-height: 1.36;
   }
 
   .resume b,
@@ -396,6 +612,36 @@ html:not(.short) .short-only {
 
   .rows {
     gap: 0.3rem;
+  }
+
+  .timeline {
+    --line: #c4b5fd;
+    --tag-bg: #f5f3ff;
+    --tag-ink: #5b21b6;
+    --glow: #ede9fe;
+    --logo-ring: #e2e8f0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .co h3 {
+    color: #0f172a;
+  }
+
+  .co {
+    padding-bottom: 0.8em;
+  }
+
+  .pos {
+    padding-bottom: 0.3em;
+  }
+
+  .pos ul {
+    margin-top: 0.15rem;
+  }
+
+  .pos li {
+    margin-bottom: 0.08rem;
   }
 
   /* One-page version: a little denser so it fits a single sheet */

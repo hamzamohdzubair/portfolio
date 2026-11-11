@@ -102,7 +102,192 @@
       <section>
         <h2>Experience</h2>
 
-        <article class="item">
+        <!-- Full version: a timeline grouped by company. Older CVs date the
+             Cartesian projects only to Consulting (2018–20) and Product R&D
+             (2020–24); the SMS composer's design diagram is from May 2020.
+             The rest of the project-to-title split is a best guess. -->
+        <div class="timeline full">
+          <article class="co current">
+            <span class="logo"><img src="images/logos/epam.jpg" alt="" /></span>
+            <div class="co-head">
+              <span class="yr">2026</span>
+              <h3>EPAM Systems</h3>
+              <span class="co-meta"><time>Jan 2026 – Present</time></span>
+            </div>
+            <div class="pos">
+              <div class="pos-head"><h4>Senior Data Scientist</h4></div>
+              <p class="context">
+                Client: <b>Opella</b> (Sanofi Consumer Healthcare). Weekly
+                e-commerce sell-out forecasting for Amazon and other retailers in
+                8+ markets, on Snowflake, SageMaker Pipelines and MLflow with
+                Chronos-2, Prophet, MFLES and Ridge models.
+              </p>
+              <ul>
+                <li>
+                  <b>Product discontinuation lifecycle</b> in the production
+                  forecaster: phased-out products fade to zero, are capped by
+                  retailer stock and hand volume over to their successor.
+                </li>
+                <li>
+                  <b>Model vs. covariate study</b> over 27 rolling backtest
+                  origins: showed model choice is worth 6–9 WAPE points while
+                  external data adds under 1, and ensembling gains about 2.
+                </li>
+                <li>
+                  <b>Plackett-Burman factorial screen</b> of feature groups in 16
+                  parallel SageMaker runs, replacing one-feature-at-a-time
+                  testing; cut screening time by <b>63%</b> (246 → 91 min) and
+                  SHAP cost by about 60%.
+                </li>
+                <li>
+                  Redesigned <b>cannibalization detection</b> to remove false
+                  positives from zero-inflated sales; found by reproducing runs
+                  that production had silently switched to the wrong Chronos
+                  checkpoint.
+                </li>
+                <li>
+                  Audited the 9 forecast-exclusion rules (12.7% of recent volume
+                  excluded, several rules dead) and proposed a three-tier
+                  redesign; ranked cross-market data-quality issues by revenue
+                  impact.
+                </li>
+                <li>
+                  Self-initiated internal tools: <b>nx</b>, a Snowflake
+                  data-access and run-reproduction library used in 40+
+                  notebooks; <b>benchpress</b>, a FastAPI app for benchmarking
+                  forecast runs; and <b>ops</b>, a Rust CLI tying Jira, GitHub
+                  and SageMaker test runs together.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="co">
+            <span class="logo"><img src="images/logos/turing.png" alt="" /></span>
+            <div class="co-head">
+              <span class="yr">2024</span>
+              <h3>Turing.com</h3>
+              <span class="co-meta"><time>Aug 2024 – Apr 2025</time></span>
+            </div>
+            <div class="pos">
+              <div class="pos-head"><h4>Senior Data Scientist</h4></div>
+              <ul>
+                <li>Part of the team training <b>Gemini</b> with supervised fine-tuning (SFT).</li>
+                <li>
+                  <b>Complex chart production tool</b> (sole designer and
+                  developer): LLM agent pipelines that cut chart generation time
+                  by <b>93%</b>, from 45 min to 3 min, at about ₹0.4 per chart.
+                </li>
+                <li>
+                  Built <b>RAG</b> with optimized inference and caching, and
+                  production agentic workflows in <b>LangChain</b> and
+                  <b>DSPy</b> with observability and evaluation built in.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="co">
+            <span class="logo"><img src="images/logos/cartesian.svg" alt="" /></span>
+            <div class="co-head">
+              <span class="yr">2018</span>
+              <h3>Cartesian Consulting</h3>
+              <span class="co-meta"><time>Aug 2018 – Aug 2024</time><span class="tag">3 promotions</span></span>
+            </div>
+            <div class="pos">
+              <div class="pos-head">
+                <h4>Senior Lead Data Scientist</h4>
+                <time>Apr 2022 – Aug 2024</time>
+              </div>
+              <ul>
+                <li>
+                  <b>Campaign prioritizer</b> (solo): contextual bandits
+                  (Thompson sampling, UCB) that pick each customer's campaign;
+                  deployed for 2 major clients (pharma retail, brokerage),
+                  lifting click-through and revenue.
+                </li>
+                <li>
+                  <b>Automated MLOps platform</b> (team of 2): configure, deploy
+                  and maintain XGBoost / LightGBM models with automated feature
+                  engineering, tuning, calibration and retraining. Used by nearly
+                  all Solus clients.
+                </li>
+              </ul>
+            </div>
+            <div class="pos">
+              <div class="pos-head">
+                <h4>Lead Data Scientist</h4>
+                <time>Jul 2020 – Mar 2022</time>
+              </div>
+              <ul>
+                <li>
+                  <b>SMS composer</b> (solo): generative NLP module and UI that
+                  breaks a message down by purpose, tone and personalization
+                  fields and writes multiple variants from a prompt.
+                </li>
+                <li>
+                  <b>Multi-touch attribution</b> (solo): Markov-model attribution
+                  adapted from digital to CRM and direct marketing.
+                </li>
+              </ul>
+            </div>
+            <div class="pos">
+              <div class="pos-head">
+                <h4>Senior Data Scientist</h4>
+                <time>Apr 2019 – Jun 2020</time>
+              </div>
+              <ul>
+                <li>
+                  <b>Open rate predictor</b> (led a team of 3): NLP pipeline that
+                  predicts email open rates from subject lines, plus a
+                  semantically controlled LSTM that writes subject lines.
+                  Deployed for a major Indian bank.
+                </li>
+              </ul>
+            </div>
+            <div class="pos">
+              <div class="pos-head">
+                <h4>Senior Analyst – AI</h4>
+                <time>Aug 2018 – Mar 2019</time>
+              </div>
+              <ul>
+                <li>
+                  <b>Product segmentation</b> (solo): LDA topic modelling to
+                  auto-categorize products for targeted marketing.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="co">
+            <span class="logo pad"><img src="images/logos/untrodden.png" alt="" /></span>
+            <div class="co-head">
+              <span class="yr">2017</span>
+              <h3>Untrodden Labs</h3>
+              <span class="co-meta"><time>Jan 2017 – Aug 2018</time></span>
+            </div>
+            <div class="pos">
+              <div class="pos-head"><h4>Founding Employee &amp; AI Lead</h4></div>
+              <ul>
+                <li>
+                  Bootstrapped startup building an Alexa-like desktop robot with
+                  voice commands, vision, face tracking and an animated emotive
+                  display.
+                </li>
+                <li>
+                  Led a team of 5 building speech intent classification (SVM,
+                  random forests), novelty detection (one-class SVM), information
+                  extraction (grammar and dependency parsing, SyntaxNet) and live
+                  object detection over 90 classes (YOLO, MobileNet SSD, ResNet
+                  v2).
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- One-page version: one flat entry per role -->
+        <article class="item short-only">
           <div class="item-head">
             <h3>Senior Data Scientist <span>· EPAM Systems</span></h3>
             <time>Jan 2026 – Present</time>
@@ -110,9 +295,7 @@
           <p class="context">
             Client: <b>Opella</b> (Sanofi Consumer Healthcare).
             Weekly e-commerce sell-out forecasting for Amazon and other
-            retailers in 8+ markets<span class="full">, on Snowflake, SageMaker
-            Pipelines and MLflow with Chronos-2, Prophet, MFLES and Ridge
-            models</span>.
+            retailers in 8+ markets.
           </p>
           <ul>
             <li>
@@ -131,47 +314,23 @@
               cut screening time by <b>63%</b> (246 → 91 min) and SHAP cost by
               about 60%.
             </li>
-            <li class="full">
-              Redesigned <b>cannibalization detection</b> to remove false
-              positives from zero-inflated sales; found by reproducing runs that
-              production had silently switched to the wrong Chronos checkpoint.
-            </li>
-            <li class="full">
-              Audited the 9 forecast-exclusion rules (12.7% of recent volume
-              excluded, several rules dead) and proposed a three-tier redesign;
-              ranked cross-market data-quality issues by revenue impact.
-            </li>
-            <li class="full">
-              Self-initiated internal tools: <b>nx</b>, a Snowflake
-              data-access and run-reproduction library used in 40+ notebooks;
-              <b>benchpress</b>, a FastAPI app for benchmarking forecast runs;
-              and <b>ops</b>, a Rust CLI tying Jira, GitHub and SageMaker test
-              runs together.
-            </li>
           </ul>
         </article>
 
-        <article class="item">
+        <article class="item short-only">
           <div class="item-head">
             <h3>Senior Data Scientist <span>· Turing.com</span></h3>
             <time>Aug 2024 – Apr 2025</time>
           </div>
           <ul>
-            <li class="full">Part of the team training <b>Gemini</b> with supervised fine-tuning (SFT).</li>
             <li>
               <b>Complex chart production tool</b> (sole designer and developer):
               LLM agent pipelines that cut chart generation time by <b>93%</b>,
               from 45 min to 3 min, at about ₹0.4 per chart.
             </li>
-            <li class="full">
-              Built <b>RAG</b> with optimized inference and caching, and
-              production agentic workflows in <b>LangChain</b> and <b>DSPy</b>
-              with observability and evaluation built in.
-            </li>
           </ul>
         </article>
 
-        <!-- Cartesian, one-page version: one block with the promotion path -->
         <article class="item short-only">
           <div class="item-head">
             <h3>Senior Lead Data Scientist <span>· Cartesian Consulting</span></h3>
@@ -203,95 +362,11 @@
           </ul>
         </article>
 
-        <!-- Cartesian, full version: one block per title. Older CVs date the
-             projects only to Consulting (2018–20) and Product R&D (2020–24);
-             the SMS composer's design diagram is from May 2020. The rest of
-             the split is a best guess. -->
-        <article class="item full">
-          <div class="item-head">
-            <h3>Senior Lead Data Scientist <span>· Cartesian Consulting</span></h3>
-            <time>Apr 2022 – Aug 2024</time>
-          </div>
-          <ul>
-            <li>
-              <b>Campaign prioritizer</b> (solo): contextual bandits (Thompson
-              sampling, UCB) that pick each customer's campaign; deployed for 2
-              major clients (pharma retail, brokerage), lifting click-through
-              and revenue.
-            </li>
-            <li>
-              <b>Automated MLOps platform</b> (team of 2): configure, deploy and
-              maintain XGBoost / LightGBM models with automated feature
-              engineering, tuning, calibration and retraining. Used by nearly all
-              Solus clients.
-            </li>
-          </ul>
-        </article>
-
-        <article class="item full">
-          <div class="item-head">
-            <h3>Lead Data Scientist <span>· Cartesian Consulting</span></h3>
-            <time>Jul 2020 – Mar 2022</time>
-          </div>
-          <ul>
-            <li>
-              <b>SMS composer</b> (solo): generative NLP module and UI that
-              breaks a message down by purpose, tone and personalization fields
-              and writes multiple variants from a prompt.
-            </li>
-            <li>
-              <b>Multi-touch attribution</b> (solo): Markov-model attribution
-              adapted from digital to CRM and direct marketing.
-            </li>
-          </ul>
-        </article>
-
-        <article class="item full">
-          <div class="item-head">
-            <h3>Senior Data Scientist <span>· Cartesian Consulting</span></h3>
-            <time>Apr 2019 – Jun 2020</time>
-          </div>
-          <ul>
-            <li>
-              <b>Open rate predictor</b> (led a team of 3): NLP pipeline that
-              predicts email open rates from subject lines, plus a semantically
-              controlled LSTM that writes subject lines. Deployed for a major
-              Indian bank.
-            </li>
-          </ul>
-        </article>
-
-        <article class="item full">
-          <div class="item-head">
-            <h3>Senior Analyst – AI <span>· Cartesian Consulting</span></h3>
-            <time>Aug 2018 – Mar 2019</time>
-          </div>
-          <ul>
-            <li>
-              <b>Product segmentation</b> (solo): LDA topic modelling to
-              auto-categorize products for targeted marketing.
-            </li>
-          </ul>
-        </article>
-
-        <article class="item">
+        <article class="item short-only">
           <div class="item-head">
             <h3>Founding Employee &amp; AI Lead <span>· Untrodden Labs</span></h3>
             <time>Jan 2017 – Aug 2018</time>
           </div>
-          <ul>
-            <li class="full">
-              Bootstrapped startup building an Alexa-like desktop robot with
-              voice commands, vision, face tracking and an animated emotive
-              display.
-            </li>
-            <li class="full">
-              Led a team of 5 building speech intent classification (SVM, random
-              forests), novelty detection (one-class SVM), information
-              extraction (grammar and dependency parsing, SyntaxNet) and live
-              object detection over 90 classes (YOLO, MobileNet SSD, ResNet v2).
-            </li>
-          </ul>
         </article>
       </section>
 
